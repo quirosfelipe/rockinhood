@@ -18,6 +18,10 @@ app.get("/portfolio", (req, res) => {
     res.render("portfolio", { title: "Portfolio" });
 })
 
+app.get("/stocks/:id", (req, res) => {
+    res.render("company", { title: "company name" });
+})
+
 
 
 

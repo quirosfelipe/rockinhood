@@ -170,6 +170,11 @@
     font-weight: 700;
 }
 
+.portfolio__fund-link:hover {
+    color: rgb(0, 200, 5);
+    text-decoration: none;
+}
+
 .portfolio__popular {
     font-size: 23px;
     font-weight: 500;
@@ -187,25 +192,65 @@
     line-height: 28px;
     color: #040d14;
     position: relative;
-    top: 170px;
+    top: 270px;
     left: 30%;
     display: flex;
 }
 
-.portfolio__news {
+.portfolio__showmore1 {
+    font-size: 13px;
+    color: rgb(0, 200, 5);
+    display: inline-block;
+    position: relative;
+    top: 149px;
+    left: 55%;
+}
+
+.portfolio__showmore2 {
+    font-size: 13px;
+    color: rgb(0, 200, 5);
+    display: inline-block;
+    position: relative;
+    top: 249px;
+    left: 55%;
+}
+
+.portfolio__news-title {
     font-size: 23px;
     font-weight: 500;
     line-height: 28px;
     color: #040d14;
     position: relative;
-    top: 170px;
+    top: 370px;
     left: 30%;
+    margin-bottom: 20px;
 }
 
-.portfolio__showmore {
-    font-size: 13px;
-    color: rgb(0, 200, 5);
-    display: inline-block;
+.portfolio__split {
+    border-bottom: 1px solid rgba(4, 13, 20, 0.1);
+    width: 29%;
     position: relative;
-    justify-self: right;
+    top: 378px;
+    left: 30%;
+    margin-bottom: 100px;
+}
+
+.portfolio__watchlist-container {
+    width: 250px;
+    position: fixed;
+    left: 61%;
+    box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
+}
+
+.portfolio__watchlist-title {
+    font-size: 15px;
+    font-weight: 700;
+    border-top: 1px solid rgba(4, 13, 20, 0.2);
+    border-bottom: 1px solid rgba(4, 13, 20, 0.2);
+    color: #040d14;
+    padding: 14px 20px;
+}
+
+.portfolio__watchlist {
+    height: 900px;
 }

@@ -9,7 +9,7 @@ html
     nav(class="navbar")
         a(class="navbar__rockinhood" href="/") Rockinhood <img src="/assets/images/guitar-icon.png" width=40px>
         div(class="navbar__nav")
-            a(class="navbar__nav-products") Products
+            a(class="navbar__nav-products") Products <i class="navbar__arrow fa fa-angle-down"></i>
             a(class="navbar__nav-learn" href="/learn") Learn
             a(class="navbar__nav-support" href="/support") Support
         div.spacer
@@ -23,6 +23,8 @@ html
             div.section1__text Robinhood, a pioneer of commission-free investing, gives you more ways to make your money work harder.
             a(class="section1__signup" href="/signup") Sign Up
         div.section1__image-container
+            video(class="section1__video" autoplay controlslist="nodownload nofullscreen noremoteplayback" loop muted playsinline preload="auto")
+                source(src="https://cdn.robinhood.com/assets/robinhood/brand/8a5e77cafdc8af11be3651d08c2ff2a2-3x.mp4" type="video/mp4")
             img(class="section1__image" src="https://cdn.robinhood.com/assets/robinhood/brand/350f48095cefa5b4a8139e5797e5232d-1x.png")
             //- ToDo place image
 
@@ -48,8 +50,7 @@ html
             div.section3__form-container
                 form(method="post", action="/early-action")
                     input(type="text" class="section3__input" placeholder="name@email.com" required)
-                    div.section3__button-container
-                        button(type="submit" class="section3__button") Get Early Access
+                    button(type="submit" class="section3__button") Get Early Access
                 //-ToDo think about what we will do with the form
             div.section3__disclosure <i class="fa fa-exclamation-circle"></i> Fractional Shares Disclosure
         div.section3__image-container

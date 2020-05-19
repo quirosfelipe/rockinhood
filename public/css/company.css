@@ -1,0 +1,277 @@
+.company__body {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.company__title {
+    font-size: 32px;
+    font-weight: 600;
+    position: relative;
+    left: 30%;
+}
+
+.company__price {
+    font-weight: 500;
+    font-size: 34px;
+    position: relative;
+    left: 30%;
+    top: -10px;
+}
+
+.company__chart-container {
+    width: 700px;
+    height: 300px;
+    position: relative;
+    top: 30px;
+    left: 30%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.company__chart-select-container {
+    display: flex;
+    position: relative;
+    top: 35px;
+    border-bottom: 1px solid rgba(4, 13, 20, 0.1);
+}
+
+.company__chart-select {
+    border: none;
+    background-color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 15px;
+}
+
+.company__chart-select:focus {
+    outline: none;
+}
+
+.company__about {
+    position: relative;
+    left: 30%;
+    top: 100px;
+}
+
+.company__about-title {
+    color: #040d14;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    width: 700px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(4, 13, 20, 0.1);
+}
+
+.company__about-text {
+    color: #040d14;
+    font-size: 15px;
+    width: 545px;
+    padding-top: 20px;
+    margin-bottom: 45px;
+}
+
+.company__about-information-container {
+    font-size: 13px;
+    display: grid;
+    grid-template-areas:
+    "ceo emp head found"
+    "ceodata empdata headdata founddata"
+    "markcap peratio dyield avgvol"
+    "markcapdata peratiodata dyielddata avgvoldata";
+}
+
+.company__about-ceo{
+    grid-area: ceo;
+}
+
+.company__about-ceo-data{
+    grid-area: ceodata;
+    color: rgb(255, 80, 0);
+}
+
+.company__about-employees{
+    grid-area: emp;
+}
+
+.company__about-employees-data{
+    grid-area: empdata;
+    font-weight: 300;
+}
+
+.company__about-headquarters{
+    grid-area: head;
+}
+
+.company__about-headquarters-data{
+    grid-area: headdata;
+    font-weight: 300;
+}
+
+.company__about-founded{
+    grid-area: found;
+}
+
+.company__about-founded-data{
+    grid-area: founddata;
+    font-weight: 300;
+}
+
+.company__about-marketcap{
+    grid-area: markcap;
+    margin-top: 13px;
+}
+
+.company__about-marketcap-data{
+    grid-area: markcapdata;
+    font-weight: 300;
+}
+
+.company__about-pe-ratio{
+    grid-area: peratio;
+    margin-top: 13px;
+}
+
+.company__about-pe-ratio-data{
+    grid-area: peratiodata;
+    font-weight: 300;
+}
+
+.company__about-dividend-yield{
+    grid-area: dyield;
+    margin-top: 13px;
+}
+
+.company__about-dividend-yield-data{
+    grid-area: dyielddata;
+    font-weight: 300;
+}
+
+.company__about-avgvolume{
+    grid-area: avgvol;
+    margin-top: 13px;
+}
+
+.company__about-avgvolume-data{
+    grid-area: avgvoldata;
+    font-weight: 300;
+}
+
+.company__news {
+    position: relative;
+    left: 30%;
+    top: 150px;
+}
+
+.company__news-title {
+    color: #040d14;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 28px;
+    width: 700px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(4, 13, 20, 0.1);
+}
+
+.company__news-news {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 700px;
+}
+
+.company__buy {
+    width: 270px;
+    position: fixed;
+    left: 61%;
+    box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.company__buy-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #040d14;
+    margin-bottom: 40px;
+}
+
+.company__buy-share {
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.company__buy-share-input {
+    width: 70px;
+    text-align: right;
+    border: none;
+    padding-right: 10px;
+}
+
+.company__buy-market-price {
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(4, 13, 20, 0.2);
+}
+
+.company__buy-price {
+    padding-right: 10px;
+    font-weight: 700;
+}
+
+.company__buy-estimated-cost {
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding-right: 10px;
+}
+
+.company__buy-order-button {
+    width: 90%;
+    align-self: center;
+    border: none;
+    background-color: rgb(22, 230, 143);
+    padding: 10px 0px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 4px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.company__buy-buying-power {
+    align-self: center;
+    margin-top: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(22, 230, 143);
+}
+
+.company__remove {
+    position: fixed;
+    left: 62.1%;
+    top: 545px;
+}
+
+.company__remove-watch {
+    border: 1px solid rgb(22, 230, 143);
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 10px 28px;
+    background-color: #ffffff;
+    color: rgb(22, 230, 143);
+}

@@ -2,3 +2,50 @@ extends layout.pug
 
 block content
     include includes/navigation.pug
+    div.company__body
+        div.company__title Apple
+        div.company__price $313.16
+        div.company__chart-container
+            div.company__chart placeholder for chart
+            div.company__chart-select-container
+                button.company__chart-select 1D
+                button.company__chart-select 1W
+                button.company__chart-select 1M
+                button.company__chart-select 3M
+                button.company__chart-select 1Y
+                button.company__chart-select 5Y
+        div.company__about
+            div.company__about-title About
+            div.company__about-text Apple, Inc. engages in the design, manufacture, and sale of smartphones, personal computers, tablets, wearables and accessories, and other variety of related services. It operates through the following geographical segments: Americas, Europe, Greater China, Japan, and Rest of Asia Pacific.
+            div.company__about-information-container
+                div.company__about-ceo CEO
+                div.company__about-ceo-data test
+                div.company__about-employees Employees
+                div.company__about-employees-data test
+                div.company__about-headquarters Headquarters
+                div.company__about-headquarters-data test
+                div.company__about-founded Founded
+                div.company__about-founded-data test
+                div.company__about-marketcap Market Cap
+                div.company__about-marketcap-data test
+                div.company__about-pe-ratio Price-Earnings Ratio
+                div.company__about-pe-ratio-data test
+                div.company__about-dividend-yield Dividend Yield
+                div.company__about-dividend-yield-data test
+                div.company__about-avgvolume Average Volumn
+                div.company__about-avgvolume-data test
+        div.company__news
+            div.company__news-title News
+            div.company__news-news Placeholder for news
+        div.company__buy
+            div.company__buy-title Buy AAPL
+            div.company__buy-share Shares
+                input(class="company__buy-share-input" placeholder="0")
+            div.company__buy-market-price Market Price
+                div.company__buy-price $313.16
+            div.company__buy-estimated-cost Estimated Cost
+                div.company__buy-cost $313.16
+            button.company__buy-order-button Review Order
+            div.company__buy-buying-power $0.00 Buying Power Available
+        div.company__remove
+            button.company__remove-watch Remove from Watchlist

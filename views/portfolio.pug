@@ -1,0 +1,33 @@
+extends layout.pug
+
+block content
+    nav(class="navbar")
+        a(class="navbar__rockinhood" href="/portfolio") <img src="/assets/images/guitar-icon.png" width=40px>
+        div.spacer
+        div.searchbar-container
+            div.searchbar-icon <i class="fa fa-search" aria-hidden="true"></i>
+            div.searchbar-input
+                input(class="searchbar-input-field" placeholder="Search")
+        div.spacer
+        div(class="navbar__nav-container")
+            ul(class="navbar__nav")
+                li(class="navbar__nav-free-stocks") Free Stocks
+                li(class="navbar__nav-porfolio" href="/portfolio") Portfolio
+                li(class="navbar__nav-cash" href="/cash") Cash
+                li(class="navbar__nav-messages") Messages
+                li(class="navbar__nav-account") Account
+    div.portfolio__body
+        div.portfolio__header Welcome to Rockinhood
+        div.portfolio__chart placeholder for chart
+        div.portfolio__fund
+            div.portfolio__fund-header Fund Your Account
+            div.portfolio__fund-text Your bank account is ready! Fund your Robinhood account to begin trading.
+            a(href="/fund" class="portfolio__fund-link") Add Funds
+        div.portfolio__popular Popular Collections
+            div.portfolio__showmore Show More
+            //- ToDo think about how to implement this
+        div.portfolio__movers Top Movers
+            div.portfolio__showmore Show More
+            //- ToDo think about how to implement this
+        div.portfolio__news Recent News
+        div.portfolio__watchlist Watchlist

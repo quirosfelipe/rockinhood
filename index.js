@@ -13,6 +13,11 @@ app.get("/", (req, res) => {
     res.render("index", { title: "It's Time to Do Money" });
 })
 
+//Implement this to the root path with authentication
+app.get("/portfolio", (req, res) => {
+    res.render("portfolio", { title: "Portfolio" });
+})
+
 
 
 

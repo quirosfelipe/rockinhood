@@ -1,0 +1,211 @@
+/* Navbar */
+.navbar {
+    box-shadow: none;
+    background-color: #ffffff;
+}
+
+.navbar__rockinhood {
+    margin-left: 40px;
+}
+
+.navbar__rockinhood:hover {
+    filter: invert(54%) sepia(91%) saturate(3430%) hue-rotate(90deg) brightness(105%) contrast(107%);
+}
+
+.searchbar-container {
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+    position: relative;
+    right: 75px;
+    border: 1px solid rgba(4, 13, 20, 0.1);
+    border-radius: 4px;
+}
+
+.searchbar-container:focus-within {
+    border: none;
+    box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
+}
+
+.searchbar-icon {
+    padding: 5px 10px;
+    color: rgba(4, 13, 20, 0.5);
+}
+
+.searchbar-input-field {
+    font-size: 15px;
+    resize: none;
+    font-weight: 400;
+    height: 35px;
+    width: 450px;
+    border: none;
+}
+
+.searchbar-input-field:focus {
+    outline: none;
+    border: none;
+}
+
+.navbar__nav-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__nav {
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+}
+
+.navbar__nav-free-stocks {
+    margin-right: 35px;
+    list-style: none;
+}
+
+.navbar__nav-porfolio {
+    margin-right: 35px;
+    color: #040d14;
+    list-style: none;
+}
+
+.navbar__nav-cash {
+    margin-right: 35px;
+    color: #040d14;
+    list-style: none;
+}
+
+.navbar__nav-messages {
+    margin-right: 35px;
+    list-style: none;
+}
+
+.navbar__nav-account {
+    margin-right: 35px;
+    list-style: none;
+}
+
+.navbar__nav-free-stocks:hover {
+    cursor: pointer;
+    color: rgb(0, 200, 5);
+}
+
+.navbar__nav-porfolio:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(0, 200, 5);
+}
+
+.navbar__nav-cash:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(0, 200, 5);
+}
+
+.navbar__nav-messages:hover {
+    cursor: pointer;
+    color: rgb(0, 200, 5);
+}
+
+.navbar__nav-account:hover {
+    cursor: pointer;
+    color: rgb(0, 200, 5);
+}
+
+/* Body */
+.portfolio__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.portfolio__header {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    position: relative;
+    left: 30%;
+}
+
+.portfolio__chart {
+    width: 700px;
+    height: 300px;
+    position: relative;
+    top: 30px;
+    left: 30%;
+    border: 1px solid black;
+}
+
+.portfolio__fund {
+    border: 1px solid rgba(4, 13, 20, 0.1);
+    border-radius: 4px;
+    width: 700px;
+    height: 130px;
+    position: relative;
+    top: 100px;
+    left: 30%;
+}
+
+.portfolio__fund-header {
+    color: #6f787e;
+    font-weight: 700;
+    font-size: 13px;
+    margin: 18px 0px 10px 15px;
+}
+
+.portfolio__fund-text {
+    color: #040d14;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    margin: 0px 0px 20px 15px;
+}
+
+.portfolio__fund-link {
+    color: rgb(0, 200, 5);
+    margin: 0px 0px 0px 15px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.portfolio__popular {
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #040d14;
+    position: relative;
+    top: 170px;
+    left: 30%;
+    display: flex;
+}
+
+.portfolio__movers {
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #040d14;
+    position: relative;
+    top: 170px;
+    left: 30%;
+    display: flex;
+}
+
+.portfolio__news {
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 28px;
+    color: #040d14;
+    position: relative;
+    top: 170px;
+    left: 30%;
+}
+
+.portfolio__showmore {
+    font-size: 13px;
+    color: rgb(0, 200, 5);
+    display: inline-block;
+    position: relative;
+    justify-self: right;
+}

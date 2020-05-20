@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+    div.login
+        div.login__image-container
+            img(class="login__image" src="./assets/images/loginimage.jpg")
+        div.login__form-container
+            form.login__form Welcome to Rockinhood
+                label.login__form-email Email Address
+                    input(class="login__form-email-input" name="email" type="email" required)
+                label.login__form-password Password
+                    input(class="login__form-password-input" name="password" type="password" required)
+            a(class="login__form-namepass-search" href="/search") Forgot your username or password?
+            button(class="login__form-signin-button" type="submit" ) Sign In

@@ -14,6 +14,10 @@ app.get("/", (req, res) => {
 })
 
 //Implement this to the root path with authentication
+app.get("/login", (req, res) => {
+    res.render("login", { title: "Log In" });
+})
+
 app.get("/portfolio", (req, res) => {
     res.render("portfolio", { title: "Portfolio" });
 })

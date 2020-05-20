@@ -1,0 +1,125 @@
+.signup__title {
+    position: relative;
+    top: 200px;
+    left: 30%;
+    font-size: 48px;
+    font-weight: 100;
+    width: 100%;
+}
+
+.signup__text {
+    position: relative;
+    top: 250px;
+    left: 30%;
+    font-size: 24px;
+    font-weight: 100;
+    width: 100%;
+}
+
+.signup__form {
+    position: relative;
+    left: 29.5%;
+    top: 300px;
+    width: 700px;
+    display: grid;
+    grid-template-areas:
+        "firstName lastName"
+        "email email"
+        "password password"
+        "confirm confirm"
+        "button button";
+}
+
+.signup__form-first {
+    grid-area: firstName;
+    margin: 13px;
+    padding: 10px 30px;
+    border: 1px solid rgba(4, 13, 20, 0.2);
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.signup__form-last {
+    grid-area: lastName;
+    margin: 13px;
+    padding: 10px 30px;
+    border: 1px solid rgba(4, 13, 20, 0.2);
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.signup__form-email {
+    grid-area: email;
+    margin: 13px;
+    display: block;
+    padding: 10px 30px;
+    border: 1px solid rgba(4, 13, 20, 0.2);
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.signup__form-password {
+    grid-area: password;
+    margin: 13px;
+    display: block;
+    padding: 10px 30px;
+    border: 1px solid rgba(4, 13, 20, 0.2);
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.signup__form-confirm {
+    grid-area: confirm;
+    margin: 13px;
+    display: block;
+    padding: 10px 30px;
+    border: 1px solid rgba(4, 13, 20, 0.2);
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.signup__form-button {
+    grid-area: button;
+    width: 700px;
+    margin: 13px;
+    padding: 10px 0px;
+    border: none;
+    background-color: rgb(0, 200, 5);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.signup__video-container {
+    position: relative;
+    left: 65%;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup__video {
+    position: relative;
+    top: -200px;
+    width: 300px;
+}
+
+.signup__video-heading {
+    font-size: 18px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    color: rgb(78, 78, 78);
+    position: relative;
+    top: -200px;
+}
+
+.signup__video-text {
+    position: relative;
+    top: -200px;
+    width: 230px;
+    text-align: center;
+    color: rgb(180, 189, 194);
+    font-size: 16px;
+}

@@ -1,0 +1,22 @@
+extends layout.pug
+
+block content
+    div.signup__title Make Your Money Move
+    div.signup__text Rockinhood lets you invest in companies you love, commission-free.
+    form(class="signup__form" method="post" action="/signup")
+        input(class="signup__form-first" name="firstName" type="text" placeholder="First name" required)
+        input(class="signup__form-last" name="lastName" type="text" placeholder="Last name" required)
+        input(class="signup__form-email" name="email" type="email" placeholder="Email" required)
+        input(class="signup__form-password" name="password" type="password" placeholder="Password (min. 10 characters)" required)
+        input(class="signup__form-confirm" name="confirmPassword" type="password" placeholder="Confirm password" required)
+        button(class="signup__form-button" type="submit") Sign Up
+    div.signup__video-container
+        video(class="signup__video" autoplay controlslist="nodownload nofullscreen noremoteplayback" loop muted playsinline preload="auto")
+            source(src="https://cdn.robinhood.com/assets/mobius_generated_assets/bb6981773f3bc09b6b80f5daa5c61e7c.mp4" type="video/mp4")
+        div.signup__video-heading Commission-free stock trading.
+        div.signup__video-text We’ve cut the fat that makes other brokerages costly, like manual account management and hundreds of storefront locations, so we can offer zero commission trading.
+
+        //- video(class="signup__video2" autoplay controlslist="nodownload nofullscreen noremoteplayback" loop muted playsinline preload="auto")
+        //-     source(src="https://cdn.robinhood.com/assets/mobius_generated_assets/00a0db08182f224d1464a43dc32bae48.mp4" type="video/mp4")
+        //- video(class="signup__video3" autoplay controlslist="nodownload nofullscreen noremoteplayback" loop muted playsinline preload="auto")
+        //-     source(src="https://cdn.robinhood.com/assets/mobius_generated_assets/409e02236db73041a07d8761860f2f42.mp4" type="video/mp4")

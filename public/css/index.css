@@ -39,7 +39,7 @@ body {
 
 .navbar__nav-products:hover {
     color: rgb(0, 200, 5);
-    cursor: pointer;
+    cursor: not-allowed;
 }
 
 .navbar__arrow {
@@ -52,7 +52,7 @@ body {
 }
 
 .navbar__nav-learn:hover {
-    cursor: pointer;
+    cursor: not-allowed;
     color: rgb(0, 200, 5);
     text-decoration: none;
 }
@@ -63,7 +63,7 @@ body {
 }
 
 .navbar__nav-support:hover {
-    cursor: pointer;
+    cursor: not-allowed;
     color: rgb(0, 200, 5);
     text-decoration: none;
 }
@@ -150,6 +150,7 @@ body {
     top: 20px;
     position: relative;
     left: 340px;
+    z-index: 1;
 }
 
 .section1__signup:hover {
@@ -213,6 +214,7 @@ body {
 .section2__text--link:hover {
     color: #00C805;
     text-decoration: underline;
+    cursor: not-allowed;
 }
 
 .section2__disclosure {
@@ -226,7 +228,7 @@ body {
 
 .section2__disclosure:hover {
     color: #00C805;
-    cursor: pointer;
+    cursor: not-allowed;
 }
 
 /* Section 3 */
@@ -330,6 +332,7 @@ body {
 
 .section3__button:hover {
     background-color: rgb(0, 180, 5);
+    cursor: not-allowed;
 }
 
 .section3__disclosure {
@@ -339,6 +342,11 @@ body {
     font-size: 18px;
     font-weight: 700;
     line-height: 28px;
+}
+
+.section3__disclosure:hover {
+    color: rgb(0, 200, 5);
+    cursor: not-allowed;
 }
 
 /* Section 4 */
@@ -469,6 +477,7 @@ body {
 .section5__nav--stock-fund:hover {
     cursor: pointer;
     color: rgb(0, 200, 5);
+    cursor: not-allowed;
 }
 
 .section5__nav--options {
@@ -481,6 +490,7 @@ body {
 .section5__nav--options:hover {
     cursor: pointer;
     color: rgb(0, 200, 5);
+    cursor: not-allowed;
 }
 
 .section5__nav--gold {
@@ -493,6 +503,7 @@ body {
 .section5__nav--gold:hover {
     cursor: pointer;
     color: rgb(0, 200, 5);
+    cursor: not-allowed;
 }
 
 .section5__nav--crypto {
@@ -508,6 +519,7 @@ body {
 .section5__nav--crypto:hover {
     cursor: pointer;
     color: rgb(255, 115, 153);
+    cursor: not-allowed;
 }
 
 .section5__nav--cm-text {
@@ -577,6 +589,10 @@ body {
     line-height: 28px;
 }
 
+.section5__nav--button:hover {
+    cursor: not-allowed;
+}
+
 .section5__nav--disclosure {
     position: relative;
     left: 26%;
@@ -585,6 +601,11 @@ body {
     line-height: 28px;
     font-weight: 700;
     color: rgb(111, 120, 126);
+}
+
+.section5__nav--disclosure:hover {
+    color: rgb(0, 200, 5);
+    cursor: not-allowed;
 }
 
 .section5__nav--small-text {
@@ -657,6 +678,7 @@ body {
 
 .section6__links-crypto {
     margin-bottom: 10px;
+    color: rgb(255, 144, 175);
 }
 
 .section6__links-col2 {
@@ -693,6 +715,25 @@ body {
 
 .section6__links-news {
     margin-bottom: 10px;
+}
+
+.section6__links-stock-fund:hover,
+.section6__links-options:hover,
+.section6__links-gold:hover,
+.section6__links-cash-manangement:hover,
+.section6__links-learn:hover,
+.section6__links-support:hover,
+.section6__links-snacks:hover,
+.section6__links-about:hover,
+.section6__links-careers:hover,
+.section6__links-news:hover {
+    color: rgb(0, 200, 5);
+    cursor: not-allowed;
+}
+
+.section6__links-crypto:hover {
+    color: rgb(255, 115, 153);
+    cursor: not-allowed;
 }
 
 .section6__createdby {
@@ -766,12 +807,25 @@ body {
     color: rgb(4, 13, 20);
 }
 
+.section6__subscribe-button:hover {
+    cursor: not-allowed;
+}
+
 .section6__disclaimer {
     font-size: 17px;
     font-weight: 600;
     position: relative;
     top: 70px;
 }
+
+.section6__disclaimer-background:hover,
+.section6__disclaimer-terms:hover,
+.section6__disclaimer-disclosure:hover,
+.section6__disclaimer-privacy:hover {
+    color: rgb(0, 200, 5);
+    cursor: not-allowed;
+}
+
 
 .split-container {
     display: flex;
@@ -816,6 +870,10 @@ body {
     text-decoration: underline;
 }
 
+.section7__text4-finra:hover {
+    cursor: not-allowed;
+}
+
 .section7__disclosure {
     position: relative;
     top: 170px;
@@ -823,4 +881,9 @@ body {
     font-weight: 700;
     line-height: 28px;
     color: rgb(121, 133, 139);
+}
+
+.section7__disclosure:hover {
+    color: rgb(0, 200, 5);
+    cursor: not-allowed;
 }

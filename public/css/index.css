@@ -695,10 +695,40 @@ body {
     margin-bottom: 10px;
 }
 
+.section6__createdby {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 10%;
+    top: 260px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.section6__createdby-name {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 10px;
+    position: relative;
+    left: 20px;
+}
+
+.section6__createdby-git {
+    padding: 10px 20px 10px 20px;
+    color: #ffffff;
+}
+
+.section6__createdby-git:hover {
+    color: rgb(0, 200, 5);
+}
+
 .section6__snacks-container {
     fill: #ffffff;
     position: relative;
-    left: 31%;
+    left: 30%;
     top: 60px;
     color: #ffffff;
 }

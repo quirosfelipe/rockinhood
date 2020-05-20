@@ -1,6 +1,6 @@
 .signup__title {
     position: relative;
-    top: 200px;
+    top: 250px;
     left: 30%;
     font-size: 48px;
     font-weight: 100;
@@ -9,7 +9,7 @@
 
 .signup__text {
     position: relative;
-    top: 250px;
+    top: 300px;
     left: 30%;
     font-size: 24px;
     font-weight: 100;
@@ -19,7 +19,7 @@
 .signup__form {
     position: relative;
     left: 29.5%;
-    top: 300px;
+    top: 350px;
     width: 700px;
     display: grid;
     grid-template-areas:
@@ -91,9 +91,34 @@
     font-weight: 400;
 }
 
+.signup__form-first:focus {
+    outline: none;
+    border: 1px solid rgb(0, 200, 5);
+}
+
+.signup__form-last:focus {
+    outline: none;
+    border: 1px solid rgb(0, 200, 5);
+}
+
+.signup__form-email:focus {
+    outline: none;
+    border: 1px solid rgb(0, 200, 5);
+}
+
+.signup__form-password:focus {
+    outline: none;
+    border: 1px solid rgb(0, 200, 5);
+}
+
+.signup__form-confirm:focus {
+    outline: none;
+    border: 1px solid rgb(0, 200, 5);
+}
+
 .signup__video-container {
     position: relative;
-    left: 65%;
+    left: 63%;
     width: 400px;
     display: flex;
     flex-direction: column;

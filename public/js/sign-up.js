@@ -7,6 +7,7 @@ signUpForm.addEventListener("submit", async (e) => {
     const formData = new FormData(signUpForm);
     const firstName = formData.get("firstName");
     const lastName = formData.get("lastName");
+    const fullName = `${firstName} ${lastName}`;
     const email = formData.get("email");
     const password = formData.get("password");
     const body = { firstName, lastName, email, password };

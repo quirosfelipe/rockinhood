@@ -32,3 +32,25 @@ logInForm.addEventListener("submit", async (e) => {
         handleErrors(err);
     }
 });
+
+const demoButton = document.querySelector("login__form-demo-button");
+demoButton.addEventListener("click", event => {
+    try {
+        const res = await fetch("http://localhost:8080/user/guest", { method: "POST" });
+        if (!res.ok) {
+            throw res;
+        }
+        const {
+            token,
+            user: { id },
+        } = await res.json();
+        // storage access_token in localStorage:
+        localStorage.setItem("ROCKINHOOD_ACCESS_TOKEN", token);
+        localStorage.setItem("ROCKINHOOD_CURRENT_USER_ID", id);
+        // redirect to home page to see all tweets:
+        window.location.href = "/portfolio";
+    } catch (err) {
+        handleErrors(err);
+    }
+
+})

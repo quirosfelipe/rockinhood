@@ -26,3 +26,7 @@ export const handleErrors = async (err) => {
         );
     }
 };
+
+module.exports = {
+    handelErrors
+}

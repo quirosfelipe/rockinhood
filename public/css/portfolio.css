@@ -96,7 +96,7 @@ body {
 }
 
 .navbar__nav-porfolio:hover {
-    cursor: not-allowed;
+    cursor: pointer;
     text-decoration: none;
     color: rgb(0, 200, 5);
 }
@@ -149,6 +149,7 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 100px;
+    width: 100%;
 }
 
 .portfolio__header {
@@ -203,9 +204,10 @@ body {
 .portfolio__fund-link:hover {
     color: rgb(0, 200, 5);
     text-decoration: none;
+    cursor: not-allowed;
 }
 
-.portfolio__popular {
+/* .portfolio__popular {
     font-size: 23px;
     font-weight: 500;
     line-height: 28px;
@@ -214,9 +216,9 @@ body {
     top: 170px;
     left: 30%;
     display: flex;
-}
+} */
 
-.portfolio__movers {
+/* .portfolio__movers {
     font-size: 23px;
     font-weight: 500;
     line-height: 28px;
@@ -225,24 +227,29 @@ body {
     top: 270px;
     left: 30%;
     display: flex;
-}
+} */
 
-.portfolio__showmore1 {
+/* .portfolio__showmore1 {
     font-size: 13px;
     color: rgb(0, 200, 5);
     display: inline-block;
     position: relative;
     top: 149px;
     left: 55%;
-}
+} */
 
-.portfolio__showmore2 {
+/* .portfolio__showmore2 {
     font-size: 13px;
     color: rgb(0, 200, 5);
     display: inline-block;
     position: relative;
     top: 249px;
     left: 55%;
+} */
+
+.portfolio__news-container {
+    position: relative;
+    top: 150px;
 }
 
 .portfolio__news-title {
@@ -251,7 +258,6 @@ body {
     line-height: 28px;
     color: #040d14;
     position: relative;
-    top: 370px;
     left: 30%;
     margin-bottom: 20px;
 }
@@ -295,8 +301,10 @@ body {
     padding: 3% 3% 3% 10%;
 }
 .portfolio__watchlist-chart{
-
+    justify-self: center;
+    padding: 5px 5px;
 }
+
 .portfolio__watchlist-price{
     font-size: 13px;
     font-weight: 700;
@@ -304,8 +312,25 @@ body {
 }
 
 
+@media screen and (min-width:1440px) {
+    .portfolio__body {
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        width: 100%;
+    }
+}
 
-@media screen and (max-width: 1440px) {
+
+@media screen and (max-width: 1920px) {
+    .portfolio__body {
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        width: 70%;
+        position: relative;
+    }
+
     .portfolio__watchlist-container {
         width: 250px;
         position: fixed;
@@ -313,4 +338,34 @@ body {
         /* margin-left: 200px; */
         box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
     }
+
+    .searchbar-container {
+        width: 30%;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .portfolio__body {
+        display: flex;
+        flex-direction: column;
+        margin-top: 100px;
+        width: 50%;
+        position: relative;
+    }
+
+    .portfolio__watchlist-container {
+        width: 250px;
+        position: fixed;
+        left: 71%;
+        /* margin-left: 200px; */
+        box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
+    }
+
+    .searchbar-container {
+        width: 10%;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
 }

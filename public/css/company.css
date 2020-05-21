@@ -34,7 +34,7 @@
 .company__chart-select-container {
     display: flex;
     position: relative;
-    top: 35px;
+    top: 1%;
     border-bottom: 1px solid rgba(4, 13, 20, 0.1);
 }
 
@@ -44,6 +44,17 @@
     font-size: 13px;
     font-weight: 600;
     margin-right: 15px;
+    cursor: not-allowed;
+}
+
+.company__chart-select-1 {
+    border: none;
+    background-color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 15px;
+    color: rgb(255,80,0);
+    border-bottom: 1px solid rgb(255, 80, 0);
 }
 
 .company__chart-select:focus {
@@ -273,4 +284,48 @@
     padding: 10px 28px;
     background-color: #ffffff;
     color: rgb(22, 230, 143);
+}
+
+
+@media screen and (min-width:1440px) {
+    .company__body {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+@media screen and (max-width: 1920px) {
+    .searchbar-container {
+        width: 20%;
+    }
+
+    .company__body {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 70%;
+        position: relative;
+        left: -5%;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .company__body {
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .searchbar-container {
+        width: 10%;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
 }

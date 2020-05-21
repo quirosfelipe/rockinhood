@@ -148,3 +148,37 @@
     color: rgb(180, 189, 194);
     font-size: 16px;
 }
+
+@media screen and (max-width: 1920px) {
+    .signup__title {
+        position: relative;
+        top: 250px;
+        left: 20%;
+        font-size: 48px;
+        font-weight: 100;
+        width: 100%;
+    }
+
+    .signup__text {
+        position: relative;
+        top: 300px;
+        left: 20%;
+        font-size: 24px;
+        font-weight: 100;
+        width: 100%;
+    }
+
+    .signup__form {
+        position: relative;
+        left: 19.5%;
+        top: 350px;
+        width: 700px;
+        display: grid;
+        grid-template-areas:
+            "firstName lastName"
+            "email email"
+            "password password"
+            "confirm confirm"
+            "button button";
+    }
+}

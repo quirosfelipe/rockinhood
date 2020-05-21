@@ -1,4 +1,8 @@
 /* Navbar */
+body {
+    overflow-x: hidden;
+}
+
 .navbar {
     box-shadow: none;
     background-color: #ffffff;
@@ -87,30 +91,57 @@
 }
 
 .navbar__nav-free-stocks:hover {
-    cursor: pointer;
+    cursor: not-allowed;
     color: rgb(0, 200, 5);
 }
 
 .navbar__nav-porfolio:hover {
-    cursor: pointer;
+    cursor: not-allowed;
     text-decoration: none;
     color: rgb(0, 200, 5);
 }
 
 .navbar__nav-cash:hover {
-    cursor: pointer;
+    cursor: not-allowed;
     text-decoration: none;
     color: rgb(0, 200, 5);
 }
 
 .navbar__nav-messages:hover {
-    cursor: pointer;
+    cursor: not-allowed;
     color: rgb(0, 200, 5);
 }
 
 .navbar__nav-account:hover {
     cursor: pointer;
     color: rgb(0, 200, 5);
+}
+
+.navbar__account {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    border: 1px solid rgba(4, 13, 20, 0.2);
+    border-radius: 4px;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    z-index: 2;
+}
+
+.navigation__status {
+    position: absolute;
+}
+
+.hidden {
+    display: none;
+}
+
+.navbar__account-signout {
+    font-size: 14px;
+    font-weight: 700;
 }
 
 /* Body */
@@ -135,7 +166,6 @@
     position: relative;
     top: 30px;
     left: 30%;
-    border: 1px solid black;
 }
 
 .portfolio__fund {
@@ -252,5 +282,35 @@
 }
 
 .portfolio__watchlist {
-    height: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 15%;
+    font-weight: 500;
+}
+
+.portfolio__watchlist-name{
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3% 3% 3% 10%;
+}
+.portfolio__watchlist-chart{
+
+}
+.portfolio__watchlist-price{
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3% 10% 3% 3%;
+}
+
+
+
+@media screen and (max-width: 1440px) {
+    .portfolio__watchlist-container {
+        width: 250px;
+        position: fixed;
+        left: 71%;
+        /* margin-left: 200px; */
+        box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
+    }
 }

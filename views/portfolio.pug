@@ -3,8 +3,8 @@ extends layout.pug
 block content
     include includes/navigation.pug
     div.portfolio__body
-        div.portfolio__header Welcome to Rockinhood
-        div.portfolio__chart placeholder for chart
+        div.portfolio__header
+        div.portfolio__chart
         div.portfolio__fund
             div.portfolio__fund-header Fund Your Account
             div.portfolio__fund-text Your bank account is ready! Fund your Robinhood account to begin trading.
@@ -25,4 +25,9 @@ block content
             div.portfolio__news
         div.portfolio__watchlist-container
             div.portfolio__watchlist-title Watchlist
-            div.portfolio__watchlist test
+            div.portfolio__watchlist
+                div.portfolio__watchlist-name AAPL
+                div.portfolio__watchlist-chart
+                div.portfolio__watchlist-price $10
+    script(src="/js/portfolio.js")
+    script(src="js/sign-out.js")

@@ -1,3 +1,4 @@
+import { handleErrors, backendUrl } from './utils.js';
 // import { handleErrors } from "./utils.js";
 
 const handleErrors = async (err) => {
@@ -38,7 +39,7 @@ logInForm.addEventListener("submit", async (e) => {
     const password = formData.get("password");
     const body = { email, password };
     try {
-        const res = await fetch("http://localhost:8080/users/token", {
+        const res = await fetch(`${backendUrl}/users/token`, {
             method: "POST",
             body: JSON.stringify(body),
             headers: {
@@ -65,7 +66,7 @@ logInForm.addEventListener("submit", async (e) => {
 const demoButton = document.querySelector(".login__form-demo-button");
 demoButton.addEventListener("click", async (e) => {
     try {
-        const res = await fetch("http://localhost:8080/users/guest", { method: "POST" });
+        const res = await fetch(`${backendUrl}/users/guest`, { method: "POST" });
         if (!res.ok) {
             throw res;
         }

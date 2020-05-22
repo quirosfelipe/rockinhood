@@ -1,3 +1,4 @@
+import { handleErrors, backendUrl } from './utils.js';
 // const dates = {
 //   "2020-05-18": 314.9599914550781,
 //   "2020-05-15": 307.7099914550781,
@@ -527,12 +528,12 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     const userId = localStorage.getItem("ROCKINHOOD_CURRENT_USER_ID");
     const rawPortfolioPrices = [];
 
-    const stockListRes = await fetch(`http://localhost:8080/transactions/${userId}`);
+    const stockListRes = await fetch(`${backendUrl}/transactions/${userId}`);
     const stockListData = await stockListRes.json();
     stockListData.transactions.forEach(async (ownedCompany, i) => {
         const companySymbol = ownedCompany.Company.symbol;
         const ownedCompanyShare = ownedCompany.shares;
-        const chartInfoRes = await fetch(`http://localhost:8080/stocks/chartinfo/${companySymbol}`);
+        const chartInfoRes = await fetch(`${backendUrl}/stocks/chartinfo/${companySymbol}`);
         const chartData = await chartInfoRes.json();
         const parsedData = chartData.data.map((element) => {
             element.date = new Date(element.date);
@@ -582,11 +583,11 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
     function triggerWatch() {
         setTimeout(async () => {
-            const watchListRes = await fetch(`http://localhost:8080/watchlists/${userId}`);
+            const watchListRes = await fetch(`${backendUrl}/watchlists/${userId}`);
             const watchListData = await watchListRes.json();
             watchListData.watchlists.forEach(async (watchedCompany, i) => {
                 const companySymbol = watchedCompany.Company.symbol;
-                const chartInfoRes = await fetch(`http://localhost:8080/stocks/chartinfo/${companySymbol}`);
+                const chartInfoRes = await fetch(`${backendUrl}/stocks/chartinfo/${companySymbol}`);
                 const chartData = await chartInfoRes.json();
                 const parsedData = chartData.data.map((element) => {
                     element.date = new Date(element.date);

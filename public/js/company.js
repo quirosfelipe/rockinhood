@@ -1,65 +1,7 @@
-// const dates = {
-//   "2020-05-18": 314.9599914550781,
-//   "2020-05-15": 307.7099914550781,
-//   "2020-05-14": 309.5400085449219,
-//   "2020-05-13": 307.6499938964844,
-//   "2020-05-12": 311.4100036621094,
-//   "2020-05-11": 278.5799865722656,
-//   "2020-05-08": 310.1300048828125,
-//   "2020-05-08": 315.010009765625,
-//   "2020-05-07": 303.739990234375,
-//   "2020-05-06": 300.6300048828125,
-//   "2020-05-05": 297.55999755859375,
-//   "2020-05-04": 293.1600036621094,
-//   "2020-05-01": 289.07000732421875,
-//   "2020-04-30": 293.79998779296875,
-//   "2020-04-29": 287.7300109863281,
-//   "2020-04-28": 315.010009765625,
-//   "2020-04-27": 283.1700134277344,
-//   "2020-04-24": 282.9700012207031,
-//   "2020-04-23": 275.0299987792969,
-//   "2020-04-22": 276.1000061035156,
-//   "2020-04-21": 268.3699951171875,
-//   "2020-04-20": 276.92999267578125,
-// };
-
-// document.addEventListener("DOMContentLoaded", () => {
-
-
-//     var arr = [];
-//   function parseData(data) {
-//     for (var i in data) {
-//     //   console.log(arr);
-//       arr.unshift({
-//         date: new Date(i), //date
-//         value: +data[i], //convert string to number
-//       });
-//     }
-//     // console.log(arr);
-//     return arr;
-//   }
-//   var parsedData = parseData(dates);
-//   var initVal = (
-//     Math.round(parsedData[parsedData.length - 1].value * 100) / 100
-//   ).toFixed(2);
-//   var defaultVal = parsedData[0].value; //*** */
-//   var initDiff = initVal - defaultVal; //*** */
-//   var initPercentage = (initVal * 100) / defaultVal - 100;
-//   document.querySelector(".company__price").innerHTML = `\$${initVal}`;
-//   document.querySelector(
-//     ".company__price-change"
-//   ).innerHTML = `\$${initDiff.toFixed(2)}(${initPercentage.toFixed(2)}%)`; //**** */
-//   if (arr[0].value > arr[arr.length - 1].value) {
-//     drawChartRed(parsedData);
-//   } else {
-//     // console.log(arr[0].value, arr[arr.length - 1].value);
-//     drawChartGreen(parsedData);
-//   }
-
-// });
+import { handleErrors, backendUrl } from './utils.js';
 
 window.addEventListener("DOMContentLoaded", async (e) => {
-    const res = await fetch("http://localhost:8080/stocks/AAPL");
+    const res = await fetch(`${backendUrl}/stocks/AAPL`);
     const data = await res.json();
     const { name, symbol, description, ceo, employees, headquarters, founded, marketCap, priceEarningRatio, dividendYield, averageVolume } = data.stock;
 
@@ -77,7 +19,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     document.querySelector(".company__about-avgvolume-data").innerHTML = modAverageVolume;
     document.querySelector(".company__buy-title").innerHTML = `Buy ${symbol}`;
 
-    const chartInfoRes = await fetch(`http://localhost:8080/stocks/chartinfo/${symbol}`);
+    const chartInfoRes = await fetch(`${backendUrl}/stocks/chartinfo/${symbol}`);
     const chartData = await chartInfoRes.json();
     const parsedData = chartData.data.map((element) => {
         element.date = new Date(element.date);

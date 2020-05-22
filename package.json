@@ -4,7 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "nodemon index.js"
+        "start": "per-env",
+        "start:development": "nodemon -r index.js",
+        "start:production": "node index.js"
     },
     "keywords": [],
     "author": "",
@@ -15,5 +17,8 @@
     },
     "devDependencies": {
         "nodemon": "^2.0.4"
+    },
+    "engines": {
+        "node": "13.x"
     }
 }

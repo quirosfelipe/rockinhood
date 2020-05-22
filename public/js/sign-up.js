@@ -1,3 +1,4 @@
+import { handleErrors, backendUrl } from './utils.js';
 //import { handleErrors } from "./utils.js";
 const handleErrors = async (err) => {
     if (err.status >= 400 && err.status < 600) {
@@ -39,7 +40,7 @@ signUpForm.addEventListener("submit", async (e) => {
     const password = formData.get("password");
     const body = { fullName, email, password };
     try {
-        const res = await fetch("http://localhost:8080/users", {
+        const res = await fetch(`${backendUrl}/users`, {
             method: "POST",
             body: JSON.stringify(body),
             headers: {

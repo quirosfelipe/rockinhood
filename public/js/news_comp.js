@@ -1,6 +1,8 @@
+import { handleErrors, backendUrl } from './utils.js';
+
 window.addEventListener("DOMContentLoaded", async (e) => {
 
-    const newsRes = await fetch(`http://localhost:8080/stocks/newslist`);
+    const newsRes = await fetch(`${backendUrl}/stocks/newslist`);
     const newsListData = await newsRes.json();
 
     console.log(newsListData);

@@ -1,6 +1,7 @@
+import { handleErrors, backendUrl } from './utils.js';
 window.addEventListener("DOMContentLoaded", async (e) => {
 
-    const newsRes = await fetch(`http://localhost:8080/stocks/newslist`);
+    const newsRes = await fetch(`${backendUrl}/stocks/newslist`);
     const newsListData = await newsRes.json();
 
     console.log(newsListData);
@@ -15,7 +16,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
         // const newsImage = newsListData.data.items.result[i].main_image.resolutions[3].url;
 
         const newsList = document.createElement("div");
-        newsList.className = "comapny__news-article-container";
+        newsList.className = "portfolio__news-article-container";
         newsList.innerHTML = `
             <img class="news__image" type="image/jpeg" src="/assets/images/${i}.jpg" width="160px" height="160px" href="${newsLink}">
             <div class="news__title"> ${newsTitle}</div>

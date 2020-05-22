@@ -5,6 +5,7 @@ const path = require("path");
 
 //Create Express app
 const app = express();
+app.locals.backend = process.env.BACKEND_URL;
 
 //Set the pug view engine
 app.set("view engine", "pug");

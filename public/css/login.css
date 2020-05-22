@@ -98,15 +98,15 @@
     font-weight: 600;
     color: #ffffff;
     border-radius: 4px;
-    position: relative;
-    right: 27%;
-    top: -60px;
+    position: absolute;
+    left: 0%;
+    top: 200px;
 }
 
 .login__form-demo-button {
     position: absolute;
-    left: 14%;
-    top: 46.4%;
+    left: 15%;
+    top: 78.9%;
     border: none;
     background-color: rgb(0, 200, 5);
     width: 240px;
@@ -141,15 +141,51 @@
         font-weight: 600;
         color: #ffffff;
         border-radius: 4px;
-        position: relative;
-        right: 37%;
-        top: -60px;
+        position: absolute;
+        left: 0%;
+        top: 200px;
+    }
+
+    .login__form-demo-button {
+        position: absolute;
+        left: 21%;
+        top: 78.9%;
+        border: none;
+        background-color: rgb(0, 200, 5);
+        width: 240px;
+        height: 50px;
+        margin-left: 60px;
+        margin-top: 80px;
+        padding: 10px 10px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #ffffff;
+        border-radius: 4px;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    .login__form-signin-button {
+        border: none;
+        background-color: rgb(0, 200, 5);
+        width: 140px;
+        height: 50px;
+        margin-left: 60px;
+        margin-top: 80px;
+        padding: 10px 10px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #ffffff;
+        border-radius: 4px;
+        position: absolute;
+        left: 0%;
+        top: 200px;
     }
 
     .login__form-demo-button {
         position: absolute;
         left: 20%;
-        top: 46.4%;
+        top: 78.9%;
         border: none;
         background-color: rgb(0, 200, 5);
         width: 240px;
@@ -171,22 +207,21 @@
         width: 140px;
         height: 50px;
         margin-left: 60px;
-        margin-right: 20px;
         margin-top: 80px;
         padding: 10px 10px;
         font-size: 13px;
         font-weight: 600;
         color: #ffffff;
         border-radius: 4px;
-        position: relative;
-        right: 51%;
-        top: -60px;
+        position: absolute;
+        left: 0%;
+        top: 200px;
     }
 
     .login__form-demo-button {
         position: absolute;
-        left: 25%;
-        top: 46.4%;
+        left: 26%;
+        top: 78.9%;
         border: none;
         background-color: rgb(0, 200, 5);
         width: 240px;

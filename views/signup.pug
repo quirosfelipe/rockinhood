@@ -3,7 +3,7 @@ extends layout.pug
 block content
     div.signup__title Make Your Money Move
     div.signup__text Rockinhood lets you invest in companies you love, commission-free.
-    form(class="signup__form" method="post" action="/signup")
+    form(class="signup__form")
         input(class="signup__form-first" name="firstName" type="text" placeholder="First name" required)
         input(class="signup__form-last" name="lastName" type="text" placeholder="Last name" required)
         input(class="signup__form-email" name="email" type="email" placeholder="Email" required)
@@ -15,4 +15,4 @@ block content
             source(src="https://cdn.robinhood.com/assets/mobius_generated_assets/bb6981773f3bc09b6b80f5daa5c61e7c.mp4" type="video/mp4")
         div.signup__video-heading Commission-free stock trading.
         div.signup__video-text We’ve cut the fat that makes other brokerages costly, like manual account management and hundreds of storefront locations, so we can offer zero commission trading.
-    script(src="/js/signup.js")
+    script(src="/js/sign-up.js")

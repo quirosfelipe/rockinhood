@@ -4,11 +4,12 @@ block content
     include includes/navigation.pug
     div.portfolio__body
         div.portfolio__header
+        div.portfolio__header-change
         div.portfolio__chart
         div.portfolio__fund
-            div.portfolio__fund-header Fund Your Account
-            div.portfolio__fund-text Your bank account is ready! Fund your Robinhood account to begin trading.
-            a(href="/fund" class="portfolio__fund-link") Add Funds
+            div.portfolio__fund-header Personalize Rockinhood
+            div.portfolio__fund-text Personalize your account by answering a few questions.
+            a(href="/fund" class="portfolio__fund-link") Personalize Rockinhood
         //- div.portfolio__movers-container
         //-     div.portfolio__movers Top Movers
         //-     div.portfolio__movers-cards
@@ -17,11 +18,20 @@ block content
             div.portfolio__news-title Recent News
             div.portfolio__split
             div.portfolio__news
-        div.portfolio__watchlist-container
-            div.portfolio__watchlist-title Watchlist
-            div.portfolio__watchlist
-                div.portfolio__watchlist-name AAPL
-                div.portfolio__watchlist-chart
-                div.portfolio__watchlist-price $10
+        div.portfolio__sidebar
+            div.portfolio__stocklist-container
+                div.portfolio__stocklist-title Stocks
+                    //- div.portfolio__stocklist
+                        //- div.portfolio__stocklist-name APPL
+                        //- div.portfolio__stocklist-shares 1 shares
+                        //- div.portfolio__stocklist-chart test
+                        //- div.portfolio__stocklist-price $10
+            div.portfolio__watchlist-container
+                div.portfolio__watchlist-title Watchlist
+                //- div.portfolio__watchlist
+                //-     div.portfolio__watchlist-name
+                //-     div.portfolio__watchlist-chart
+                //-     div.portfolio__watchlist-price $10
     script(src="/js/portfolio.js")
     script(src="/js/sign-out.js")
+    script(src="/js/news.js")

@@ -6,3 +6,9 @@ accountButton.addEventListener("click", event => {
     signOutBlock.classList.toggle("hidden");
     signOutButton.classList.toggle("hidden");
 });
+
+const signOutButton = document.querySelector(".navbar__account-signout");
+signOutButton.addEventListener("click", event => {
+    localStorage.removeItem("ROCKINHOOD_ACCESS_TOKEN");
+    localStorage.removeItem("ROCKINHOOD_CURRENT_USER_ID");
+})

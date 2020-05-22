@@ -5,6 +5,7 @@ block content
     div.company__body
         div.company__title Apple
         div.company__price
+        div.company__price-change
         div.company__chart-container
             div.company__chart
             div.company__chart-select-container
@@ -16,10 +17,10 @@ block content
                 button.company__chart-select 5Y
         div.company__about
             div.company__about-title About
-            div.company__about-text Apple, Inc. engages in the design, manufacture, and sale of smartphones, personal computers, tablets, wearables and accessories, and other variety of related services. It operates through the following geographical segments: Americas, Europe, Greater China, Japan, and Rest of Asia Pacific.
+            div.company__about-text Description
             div.company__about-information-container
                 div.company__about-ceo CEO
-                div.company__about-ceo-data test
+                div.company__about-ceo-data ceo
                 div.company__about-employees Employees
                 div.company__about-employees-data test
                 div.company__about-headquarters Headquarters
@@ -32,13 +33,13 @@ block content
                 div.company__about-pe-ratio-data test
                 div.company__about-dividend-yield Dividend Yield
                 div.company__about-dividend-yield-data test
-                div.company__about-avgvolume Average Volumn
+                div.company__about-avgvolume Average Volume
                 div.company__about-avgvolume-data test
         div.company__news
             div.company__news-title News
-            div.company__news-news Placeholder for news
+            div.company__news-news
         div.company__buy
-            div.company__buy-title Buy AAPL
+            div.company__buy-title Buy
             div.company__buy-share Shares
                 input(class="company__buy-share-input" placeholder="0")
             div.company__buy-market-price Market Price
@@ -51,3 +52,4 @@ block content
             button.company__remove-watch Remove from Watchlist
     script(src="/js/company.js")
     script(src="/js/sign-out.js")
+    script(src="/js/news_comp.js")

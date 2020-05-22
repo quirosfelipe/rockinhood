@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
 
+// const { name, symbol, description, ceo, employees, headquarters, founded, marketCap, priceEarningRatio, dividendYield, averageVolume } = require("/public/js/company.js");
+
 //Create Express app
 const app = express();
 
@@ -27,6 +29,7 @@ app.get("/portfolio", (req, res) => {
 })
 
 app.get("/stocks/:id", (req, res) => {
+    // const companyInfo = [name, symbol, description, ceo, employees, headquarters, founded, marketCap, priceEarningRatio, dividendYield, averageVolume];
     res.render("company", { title: "company name" });
 })
 

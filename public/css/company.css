@@ -19,7 +19,14 @@
     left: 30%;
     top: -10px;
 }
-
+.company__price-change {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  position: relative;
+  left: 30%;
+}
 .company__chart-container {
     width: 700px;
     height: 300px;

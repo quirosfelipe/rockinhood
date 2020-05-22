@@ -1,51 +1,28 @@
-const dates = {
-    "2020-05-18": 314.9599914550781,
-    "2020-05-15": 307.7099914550781,
-    "2020-05-14": 309.5400085449219,
-    "2020-05-13": 307.6499938964844,
-    "2020-05-12": 311.4100036621094,
-    "2020-05-11": 315.010009765625,
-    "2020-05-08": 310.1300048828125,
-    "2020-05-08": 315.010009765625,
-    "2020-05-07": 303.739990234375,
-    "2020-05-06": 300.6300048828125,
-    "2020-05-05": 297.55999755859375,
-    "2020-05-04": 293.1600036621094,
-    "2020-05-01": 289.07000732421875,
-    "2020-04-30": 293.79998779296875,
-    "2020-04-29": 287.7300109863281,
-    "2020-04-28": 278.5799865722656,
-    "2020-04-27": 283.1700134277344,
-    "2020-04-24": 282.9700012207031,
-    "2020-04-23": 275.0299987792969,
-    "2020-04-22": 276.1000061035156,
-    "2020-04-21": 268.3699951171875,
-    "2020-04-20": 276.92999267578125,
-};
-const dates2 = {
-    "2020-05-18": 276.92999267578125,
-    "2020-05-15": 268.3699951171875,
-    "2020-05-14": 276.1000061035156,
-    "2020-05-13": 275.0299987792969,
-    "2020-05-12": 311.4100036621094,
-    "2020-05-11": 315.010009765625,
-    "2020-05-08": 310.1300048828125,
-    "2020-05-08": 315.010009765625,
-    "2020-05-07": 303.739990234375,
-    "2020-05-06": 300.6300048828125,
-    "2020-05-05": 297.55999755859375,
-    "2020-05-04": 293.1600036621094,
-    "2020-05-01": 289.07000732421875,
-    "2020-04-30": 293.79998779296875,
-    "2020-04-29": 287.7300109863281,
-    "2020-04-28": 278.5799865722656,
-    "2020-04-27": 283.1700134277344,
-    "2020-04-24": 282.9700012207031,
-    "2020-04-23": 307.6499938964844,
-    "2020-04-22": 309.5400085449219,
-    "2020-04-21": 307.7099914550781,
-    "2020-04-20": 314.959991455078
-};
+// const dates = {
+//   "2020-05-18": 314.9599914550781,
+//   "2020-05-15": 307.7099914550781,
+//   "2020-05-14": 309.5400085449219,
+//   "2020-05-13": 307.6499938964844,
+//   "2020-05-12": 311.4100036621094,
+//   "2020-05-11": 278.5799865722656,
+//   "2020-05-08": 310.1300048828125,
+//   "2020-05-08": 315.010009765625,
+//   "2020-05-07": 303.739990234375,
+//   "2020-05-06": 300.6300048828125,
+//   "2020-05-05": 297.55999755859375,
+//   "2020-05-04": 293.1600036621094,
+//   "2020-05-01": 289.07000732421875,
+//   "2020-04-30": 293.79998779296875,
+//   "2020-04-29": 287.7300109863281,
+//   "2020-04-28": 315.010009765625,
+//   "2020-04-27": 283.1700134277344,
+//   "2020-04-24": 282.9700012207031,
+//   "2020-04-23": 275.0299987792969,
+//   "2020-04-22": 276.1000061035156,
+//   "2020-04-21": 268.3699951171875,
+//   "2020-04-20": 276.92999267578125,
+// };
+
 document.addEventListener("DOMContentLoaded", () => {
     var arr = [];
     function parseData(data) {
@@ -59,26 +36,32 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(arr);
         return arr;
     }
-    var parsedData = parseData(dates);
-    var initVal = (Math.round(parsedData[parsedData.length - 1].value * 100) / 100).toFixed(2);
-    document.querySelector(".portfolio__header").innerHTML = `\$${initVal}`;
-    if (arr[0].value > arr[arr.length - 1].value) {
-        drawChartRed(parsedData);
-    } else {
-        console.log(arr[0].value, arr[arr.length - 1].value);
-        drawChartGreen(parsedData);
-    }
-
-
-    var parsedData2 = parseData(dates2);
-    var initVal2 = (Math.round(parsedData2[parsedData2.length - 1].value * 100) / 100).toFixed(2);
-    document.querySelector(".portfolio__watchlist-chart")
-    if (arr[0].value > arr[arr.length - 1].value) {
-        drawChartRedWatch(parsedData);
-    } else {
-        console.log(arr[0].value, arr[arr.length - 1].value);
-        drawChartGreenWatch(parsedData);
-    }
+    // //var parsedData = parseData(dates);
+    // var initVal = (
+    //   Math.round(parsedData[parsedData.length - 1].value * 100) / 100
+    // ).toFixed(2);
+    // var defaultVal = parsedData[0].value; //*** */
+    // var initDiff = initVal - defaultVal; //*** */
+    // var initPercentage = (initVal * 100) / defaultVal - 100;
+    // document.querySelector(".portfolio__header").innerHTML = `\$${initVal}`;
+    // document.querySelector(
+    //   ".portfolio__header-change"
+    // ).innerHTML = `\$${initDiff.toFixed(2)}(${initPercentage.toFixed(2)}%)`; //**** */
+    // if (arr[0].value > arr[arr.length - 1].value) {
+    //   drawChartRed(parsedData);
+    // } else {
+    //   console.log(arr[0].value, arr[arr.length - 1].value);
+    //   drawChartGreen(parsedData);
+    // }
+    // var parsedData2 = parseData(dates2);
+    //   var initVal2 = (Math.round(parsedData2[parsedData2.length - 1].value * 100) / 100).toFixed(2);
+    //   document.querySelector(".portfolio__watchlist-chart")
+    //   if (arr[0].value > arr[arr.length - 1].value) {
+    //       drawChartRedWatch(parsedData);
+    //   } else {
+    //       console.log(arr[0].value, arr[arr.length - 1].value);
+    //       drawChartGreenWatch(parsedData);
+    //   }
 });
 
 function drawChartGreen(data) {
@@ -142,8 +125,7 @@ function drawChartGreen(data) {
         .append("g")
         .append("text")
         .style("opacity", 0)
-        .attr("font-weight", "bolder")
-        .attr("color", "orange")
+        .style("fill", "grey")
         .attr("text-anchor", "left")
         .attr("alignment-baseline", "middle");
 
@@ -196,13 +178,33 @@ function drawChartGreen(data) {
             .attr("x", x(selectedData.date) + -70)
             .attr("y", y(selectedData.value) + -40);
         console.log(selectedData.date, selectedData.value);
-        d3.select('.portfolio__header').html(`<span>\$${newVal}</span>`);
+        var diffVal = newVal - data[0].value; //***** */
+        diffVal = (Math.round(diffVal * 100) / 100).toFixed(2); //**** */
+        var diffPercentage = (newVal * 100) / data[0].value - 100;
+
+        d3.select(".portfolio__header").html(`<span>\$${newVal}</span>`);
+        d3.select(".portfolio__header-change").html(
+            `<span>\$${diffVal}(${diffPercentage.toFixed(2)}%)</span>`
+        ); //**** */
     }
     function mouseout() {
         focus.style("opacity", 0);
         focusText.style("opacity", 0);
-        var moveVal = (Math.round(data[data.length - 1].value * 100) / 100).toFixed(2);
-        d3.select('.portfolio__header').html(`<span> \$${moveVal}</span>`)
+        var moveVal = (Math.round(data[data.length - 1].value * 100) / 100).toFixed(
+            2
+        );
+        var diffVal =
+            (Math.round(data[data.length - 1].value * 100) / 100).toFixed(2) - //**** */
+            (Math.round(data[0].value * 100) / 100).toFixed(2); //**** */
+        var diffPercentage =
+            ((Math.round(data[data.length - 1].value * 100) / 100).toFixed(2) * 100) / //**** */
+            (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
+            100; //**** */
+        d3.select(".portfolio__header").html(`<span> \$${moveVal}</span>`);
+        d3.select(".portfolio__header-change").html(
+            //**** */
+            `<span>\$${diffVal.toFixed(2)}(${diffPercentage.toFixed(2)}%)</span>` //**** */
+        ); //**** */
         // d3.select('.portfolio__header').html(`<span> \$${data[data.length - 1].value}</span>`)
     }
 }
@@ -268,7 +270,7 @@ function drawChartRed(data) {
         .append("g")
         .append("text")
         .style("opacity", 0)
-        .attr("font-weight", "bolder")
+        .style("fill", "grey")
         .attr("text-anchor", "left")
         .attr("alignment-baseline", "middle");
 
@@ -321,20 +323,38 @@ function drawChartRed(data) {
             .attr("x", x(selectedData.date) + -70)
             .attr("y", y(selectedData.value) + -40);
         console.log(selectedData.date, selectedData.value);
-        d3.select('.portfolio__header').html(`<span>\$${newVal}</span>`);
+        var diffVal = newVal - data[0].value; //***** */
+        diffVal = (Math.round(diffVal * 100) / 100).toFixed(2); //**** */
+        var diffPercentage = (newVal * 100) / data[0].value - 100;
+
+        d3.select(".portfolio__header").html(`<span>\$${newVal}</span>`);
+        d3.select(".portfolio__header-change").html(
+            `<span>\$${diffVal}(${diffPercentage.toFixed(2)}%)</span>`
+        ); //**** */
     }
     function mouseout() {
         focus.style("opacity", 0);
         focusText.style("opacity", 0);
-        var moveVal = (Math.round(data[data.length - 1].value * 100) / 100).toFixed(2);
-        d3.select('.portfolio__header').html(`<span> \$${moveVal}</span>`)
+        var moveVal = (Math.round(data[data.length - 1].value * 100) / 100).toFixed(
+            2
+        );
+        var diffVal =
+            (Math.round(data[data.length - 1].value * 100) / 100).toFixed(2) - //**** */
+            (Math.round(data[0].value * 100) / 100).toFixed(2); //**** */
+        var diffPercentage =
+            ((Math.round(data[data.length - 1].value * 100) / 100).toFixed(2) * 100) / //**** */
+            (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
+            100; //**** */
+        d3.select(".portfolio__header").html(`<span> \$${moveVal}</span>`);
+        d3.select(".portfolio__header-change").html(
+            //**** */
+            `<span>\$${diffVal.toFixed(2)}(${diffPercentage.toFixed(2)}%)</span>` //**** */
+        ); //**** */
         // d3.select('.portfolio__header').html(`<span> \$${data[data.length - 1].value}</span>`)
     }
-
-    // d3.select('.portfolio__header').html(`<span> $ ${data[data.length - 1].value}</span>`)
 }
 
-function drawChartGreenWatch(data) {
+function drawChartGreenWatch(data, i, target) {
     // set the dimensions and margins of the graph
     var margin = {
         top: 10,
@@ -347,7 +367,7 @@ function drawChartGreenWatch(data) {
 
     // append the svg object to the body of the page
     var svg = d3
-        .select(".portfolio__watchlist-chart")
+        .select(`.portfolio__${target}list-chart${i}`)
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -395,7 +415,7 @@ function drawChartGreenWatch(data) {
         );
 }
 
-function drawChartRedWatch(data) {
+function drawChartRedWatch(data, i, target) {
     // set the dimensions and margins of the graph
     var margin = {
         top: 10,
@@ -408,7 +428,7 @@ function drawChartRedWatch(data) {
 
     // append the svg object to the body of the page
     var svg = d3
-        .select(".portfolio__watchlist-chart")
+        .select(`.portfolio__${target}list-chart${i}`)
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -455,3 +475,155 @@ function drawChartRedWatch(data) {
                 })
         );
 }
+
+window.addEventListener("DOMContentLoaded", async (e) => {
+    const data = [
+        { "date": "2020-04-21T13:30:00.000Z", "value": 2328.1201171875 },
+        { "date": "2020-04-22T13:30:00.000Z", "value": 2363.489990234375 },
+        { "date": "2020-04-23T13:30:00.000Z", "value": 2399.449951171875 },
+        { "date": "2020-04-24T13:30:00.000Z", "value": 2410.219970703125 },
+        { "date": "2020-04-27T13:30:00.000Z", "value": 2376 },
+        { "date": "2020-04-28T13:30:00.000Z", "value": 2314.080078125 },
+        { "date": "2020-04-29T13:30:00.000Z", "value": 2372.7099609375 },
+        { "date": "2020-04-30T13:30:00.000Z", "value": 2474 },
+        { "date": "2020-05-01T13:30:00.000Z", "value": 2286.0400390625 },
+        { "date": "2020-05-04T13:30:00.000Z", "value": 2315.989990234375 },
+        { "date": "2020-05-05T13:30:00.000Z", "value": 2317.800048828125 },
+        { "date": "2020-05-06T13:30:00.000Z", "value": 2351.260009765625 },
+        { "date": "2020-05-07T13:30:00.000Z", "value": 2367.610107421875 },
+        { "date": "2020-05-08T13:30:00.000Z", "value": 2379.610107421875 },
+        { "date": "2020-05-11T13:30:00.000Z", "value": 2409 },
+        { "date": "2020-05-12T13:30:00.000Z", "value": 2356.949951171875 },
+        { "date": "2020-05-13T13:30:00.000Z", "value": 2367.919921875 },
+        { "date": "2020-05-14T13:30:00.000Z", "value": 2388.85009765625 },
+        { "date": "2020-05-15T13:30:00.000Z", "value": 2409.780029296875 },
+        { "date": "2020-05-18T13:30:00.000Z", "value": 2426.260009765625 },
+        { "date": "2020-05-19T13:30:00.000Z", "value": 2449.330078125 },
+        { "date": "2020-05-20T13:30:00.000Z", "value": 2497.93994140625 }
+    ];
+
+    const moddedData = data.map((element) => {
+        element.date = new Date(element.date);
+        return element;
+    });
+
+    var initVal = (
+        Math.round(moddedData[moddedData.length - 1].value * 100) / 100
+    ).toFixed(2);
+
+    var defaultVal = moddedData[0].value;
+
+    var initDiff = initVal - defaultVal;
+    var initPercentage = (initVal * 100) / defaultVal - 100;
+    document.querySelector(".portfolio__header").innerHTML = `\$${initVal}`;
+    document.querySelector(
+        ".portfolio__header-change"
+    ).innerHTML = `\$${initDiff.toFixed(2)}(${initPercentage.toFixed(2)}%)`;
+
+    drawChartGreen(moddedData);
+
+
+
+    const userId = localStorage.getItem("ROCKINHOOD_CURRENT_USER_ID");
+    const rawPortfolioPrices = [];
+
+    const stockListRes = await fetch(`http://localhost:8080/transactions/${userId}`);
+    const stockListData = await stockListRes.json();
+    stockListData.transactions.forEach(async (ownedCompany, i) => {
+        const companySymbol = ownedCompany.Company.symbol;
+        const ownedCompanyShare = ownedCompany.shares;
+        const chartInfoRes = await fetch(`http://localhost:8080/stocks/chartinfo/${companySymbol}`);
+        const chartData = await chartInfoRes.json();
+        const parsedData = chartData.data.map((element) => {
+            element.date = new Date(element.date);
+            return element;
+        }).filter(element => {
+            if (element.value) return true;
+        });
+
+        rawPortfolioPrices.push(parsedData);
+
+        const companyPrice = parsedData[parsedData.length - 1].value;
+
+        if (parsedData[0].value > parsedData[parsedData.length - 1].value) {
+
+            const stockList = document.createElement("div");
+            stockList.className = "portfolio__stocklist";
+            stockList.innerHTML = `
+                    <div class="portfolio__stocklist-name"> ${companySymbol} </div>
+                    <div class="portfolio__stocklist-chart${i}"></div>
+                    <div class="portfolio__stocklist-price"> \$${companyPrice.toFixed(2)} </div>
+                `;
+            document.querySelector(".portfolio__stocklist-container").appendChild(stockList);
+            drawChartRedWatch(parsedData, i, "stock");
+        } else {
+            const stockList = document.createElement("div");
+            stockList.className = "portfolio__stocklist";
+            stockList.innerHTML = `
+                    <div class="portfolio__stocklist-name"> ${companySymbol} </div>
+                    <div class="portfolio__stocklist-chart${i}"></div>
+                    <div class="portfolio__stocklist-price"> \$${companyPrice.toFixed(2)} </div>
+                `;
+            document.querySelector(".portfolio__stocklist-container").appendChild(stockList);
+            drawChartGreenWatch(parsedData, i, "stock");
+        }
+    })
+
+    console.log(rawPortfolioPrices);
+    const portfolioPricesArr = [];
+    const portfolioPrices = {};
+    rawPortfolioPrices.forEach(element => {
+        if (!portfolioPrices[date] === element.date) {
+            portfolioPrices[date] = element.date;
+            portfolioPrices[value] = element.value;
+            portfolioPricesArr.push(portfolioPrices);
+        }
+    });
+
+    function triggerWatch() {
+        setTimeout(async () => {
+            const watchListRes = await fetch(`http://localhost:8080/watchlists/${userId}`);
+            const watchListData = await watchListRes.json();
+            watchListData.watchlists.forEach(async (watchedCompany, i) => {
+                const companySymbol = watchedCompany.Company.symbol;
+                const chartInfoRes = await fetch(`http://localhost:8080/stocks/chartinfo/${companySymbol}`);
+                const chartData = await chartInfoRes.json();
+                const parsedData = chartData.data.map((element) => {
+                    element.date = new Date(element.date);
+                    return element;
+                }).filter(element => {
+                    if (element.value) return true;
+                });
+                const companyPrice = parsedData[parsedData.length - 1].value;
+
+                if (parsedData[0].value > parsedData[parsedData.length - 1].value) {
+
+                    const watchList = document.createElement("div");
+                    watchList.className = "portfolio__watchlist";
+                    watchList.innerHTML = `
+                        <div class="portfolio__watchlist-name"> ${companySymbol} </div>
+                        <div class="portfolio__watchlist-chart${i}"></div>
+                        <div class="portfolio__watchlist-price"> \$${companyPrice.toFixed(2)} </div>
+                    `;
+                    document.querySelector(".portfolio__watchlist-container").appendChild(watchList);
+                    drawChartRedWatch(parsedData, i, "watch");
+                } else {
+                    const watchList = document.createElement("div");
+                    watchList.className = "portfolio__watchlist";
+                    watchList.innerHTML = `
+                        <div class="portfolio__watchlist-name"> ${companySymbol} </div>
+                        <div class="portfolio__watchlist-chart${i}"></div>
+                        <div class="portfolio__watchlist-price"> \$${companyPrice.toFixed(2)} </div>
+                    `;
+                    document.querySelector(".portfolio__watchlist-container").appendChild(watchList);
+                    drawChartGreenWatch(parsedData, i, "watch");
+                }
+
+            })
+        }, 1000)
+    }
+    triggerWatch();
+})
+
+
+    // < div class="portfolio__stocklist-shares" > ${ ownedCompanyShare } shares </div >

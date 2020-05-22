@@ -28,6 +28,7 @@
         "password password"
         "confirm confirm"
         "button button";
+    z-index: 1;
 }
 
 .signup__form-first {

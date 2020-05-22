@@ -177,7 +177,7 @@ function drawChartGreen(data) {
     var x0 = x.invert(d3.mouse(this)[0]);
     var i = bisect(data, x0, 1);
     var selectedData = data[i];
-    console.log(selectedData);
+    // console.log(selectedData);
     var newDate = selectedData.date.toDateString();
     var newVal = (Math.round(selectedData.value * 100) / 100).toFixed(2);
     focus.attr("cx", x(selectedData.date)).attr("cy", y(selectedData.value));

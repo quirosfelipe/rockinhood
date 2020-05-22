@@ -28,13 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
   var arr = [];
   function parseData(data) {
     for (var i in data) {
-      console.log(arr);
+      //   console.log(arr);
       arr.unshift({
         date: new Date(i), //date
         value: +data[i], //convert string to number
       });
     }
-    console.log(arr);
+    // console.log(arr);
     return arr;
   }
   // //var parsedData = parseData(dates);
@@ -178,7 +178,7 @@ function drawChartGreen(data) {
       .html(newDate)
       .attr("x", x(selectedData.date) + -70)
       .attr("y", y(selectedData.value) + -40);
-    console.log(selectedData.date, selectedData.value);
+    // console.log(selectedData.date, selectedData.value);
     var diffVal = newVal - data[0].value; //***** */
     diffVal = (Math.round(diffVal * 100) / 100).toFixed(2); //**** */
     var diffPercentage = (newVal * 100) / data[0].value - 100;
@@ -323,7 +323,7 @@ function drawChartRed(data) {
       .html(newDate)
       .attr("x", x(selectedData.date) + -70)
       .attr("y", y(selectedData.value) + -40);
-    console.log(selectedData.date, selectedData.value);
+    // console.log(selectedData.date, selectedData.value);
     var diffVal = newVal - data[0].value; //***** */
     diffVal = (Math.round(diffVal * 100) / 100).toFixed(2); //**** */
     var diffPercentage = (newVal * 100) / data[0].value - 100;
@@ -579,7 +579,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     }
   });
 
-  console.log(rawPortfolioPrices);
+  //   console.log(rawPortfolioPrices);
   const portfolioPricesArr = [];
   const portfolioPrices = {};
   rawPortfolioPrices.forEach((element) => {

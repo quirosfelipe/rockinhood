@@ -1,4 +1,5 @@
 import { handleErrors, backendUrl } from "./utils.js";
+let targetStockSymbol;
 // const dates = {
 //   "2020-05-18": 314.9599914550781,
 //   "2020-05-15": 307.7099914550781,
@@ -478,56 +479,58 @@ function drawChartRedWatch(data, i, target) {
 }
 
 window.addEventListener("DOMContentLoaded", async (e) => {
-  const data = [
-    { date: "2020-04-21T13:30:00.000Z", value: 2328.1201171875 },
-    { date: "2020-04-22T13:30:00.000Z", value: 2363.489990234375 },
-    { date: "2020-04-23T13:30:00.000Z", value: 2399.449951171875 },
-    { date: "2020-04-24T13:30:00.000Z", value: 2410.219970703125 },
-    { date: "2020-04-27T13:30:00.000Z", value: 2376 },
-    { date: "2020-04-28T13:30:00.000Z", value: 2314.080078125 },
-    { date: "2020-04-29T13:30:00.000Z", value: 2372.7099609375 },
-    { date: "2020-04-30T13:30:00.000Z", value: 2474 },
-    { date: "2020-05-01T13:30:00.000Z", value: 2286.0400390625 },
-    { date: "2020-05-04T13:30:00.000Z", value: 2315.989990234375 },
-    { date: "2020-05-05T13:30:00.000Z", value: 2317.800048828125 },
-    { date: "2020-05-06T13:30:00.000Z", value: 2351.260009765625 },
-    { date: "2020-05-07T13:30:00.000Z", value: 2367.610107421875 },
-    { date: "2020-05-08T13:30:00.000Z", value: 2379.610107421875 },
-    { date: "2020-05-11T13:30:00.000Z", value: 2409 },
-    { date: "2020-05-12T13:30:00.000Z", value: 2356.949951171875 },
-    { date: "2020-05-13T13:30:00.000Z", value: 2367.919921875 },
-    { date: "2020-05-14T13:30:00.000Z", value: 2388.85009765625 },
-    { date: "2020-05-15T13:30:00.000Z", value: 2409.780029296875 },
-    { date: "2020-05-18T13:30:00.000Z", value: 2426.260009765625 },
-    { date: "2020-05-19T13:30:00.000Z", value: 2449.330078125 },
-    { date: "2020-05-20T13:30:00.000Z", value: 2497.93994140625 },
-  ];
+  // const data = [
+  //   { date: "2020-04-21T13:30:00.000Z", value: 2328.1201171875 },
+  //   { date: "2020-04-22T13:30:00.000Z", value: 2363.489990234375 },
+  //   { date: "2020-04-23T13:30:00.000Z", value: 2399.449951171875 },
+  //   { date: "2020-04-24T13:30:00.000Z", value: 2410.219970703125 },
+  //   { date: "2020-04-27T13:30:00.000Z", value: 2376 },
+  //   { date: "2020-04-28T13:30:00.000Z", value: 2314.080078125 },
+  //   { date: "2020-04-29T13:30:00.000Z", value: 2372.7099609375 },
+  //   { date: "2020-04-30T13:30:00.000Z", value: 2474 },
+  //   { date: "2020-05-01T13:30:00.000Z", value: 2286.0400390625 },
+  //   { date: "2020-05-04T13:30:00.000Z", value: 2315.989990234375 },
+  //   { date: "2020-05-05T13:30:00.000Z", value: 2317.800048828125 },
+  //   { date: "2020-05-06T13:30:00.000Z", value: 2351.260009765625 },
+  //   { date: "2020-05-07T13:30:00.000Z", value: 2367.610107421875 },
+  //   { date: "2020-05-08T13:30:00.000Z", value: 2379.610107421875 },
+  //   { date: "2020-05-11T13:30:00.000Z", value: 2409 },
+  //   { date: "2020-05-12T13:30:00.000Z", value: 2356.949951171875 },
+  //   { date: "2020-05-13T13:30:00.000Z", value: 2367.919921875 },
+  //   { date: "2020-05-14T13:30:00.000Z", value: 2388.85009765625 },
+  //   { date: "2020-05-15T13:30:00.000Z", value: 2409.780029296875 },
+  //   { date: "2020-05-18T13:30:00.000Z", value: 2426.260009765625 },
+  //   { date: "2020-05-19T13:30:00.000Z", value: 2449.330078125 },
+  //   { date: "2020-05-20T13:30:00.000Z", value: 2497.93994140625 },
+  // ];
 
-  const moddedData = data.map((element) => {
-    element.date = new Date(element.date);
-    return element;
-  });
+  // const moddedData = data.map((element) => {
+  //   element.date = new Date(element.date);
+  //   return element;
+  // });
 
-  var initVal = (
-    Math.round(moddedData[moddedData.length - 1].value * 100) / 100
-  ).toFixed(2);
+  // var initVal = (
+  //   Math.round(moddedData[moddedData.length - 1].value * 100) / 100
+  // ).toFixed(2);
 
-  var defaultVal = moddedData[0].value;
+  // var defaultVal = moddedData[0].value;
 
-  var initDiff = initVal - defaultVal;
-  var initPercentage = (initVal * 100) / defaultVal - 100;
-  document.querySelector(".portfolio__header").innerHTML = `\$${initVal}`;
-  document.querySelector(
-    ".portfolio__header-change"
-  ).innerHTML = `\$${initDiff.toFixed(2)}(${initPercentage.toFixed(2)}%)`;
+  // var initDiff = initVal - defaultVal;
+  // var initPercentage = (initVal * 100) / defaultVal - 100;
+  // document.querySelector(".portfolio__header").innerHTML = `\$${initVal}`;
+  // document.querySelector(
+  //   ".portfolio__header-change"
+  // ).innerHTML = `\$${initDiff.toFixed(2)}(${initPercentage.toFixed(2)}%)`;
 
-  drawChartGreen(moddedData);
+  // drawChartGreen(moddedData);
 
   const userId = localStorage.getItem("ROCKINHOOD_CURRENT_USER_ID");
-  const rawPortfolioPrices = [];
+
+  var rawPortfolioPrices = [];
 
   const stockListRes = await fetch(`${backendUrl}/transactions/${userId}`);
   const stockListData = await stockListRes.json();
+  // console.log(stockListData.transactions);
   stockListData.transactions.forEach(async (ownedCompany, i) => {
     const companySymbol = ownedCompany.Company.symbol;
     const ownedCompanyShare = ownedCompany.shares;
@@ -543,8 +546,13 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       .filter((element) => {
         if (element.value) return true;
       });
-
-    rawPortfolioPrices.push(parsedData);
+    // CODE TO CREATEPORTFOLIO CHART DATA BELOW
+    const pricesTimesSharesData = parsedData.map((ele) => {
+      ele.value = ele.value * ownedCompanyShare;
+      return ele;
+    });
+    rawPortfolioPrices.push(...pricesTimesSharesData);
+    // CODE TO CREATEPORTFOLIO CHART DATA ABOVE
 
     const companyPrice = parsedData[parsedData.length - 1].value;
 
@@ -552,11 +560,11 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       const stockList = document.createElement("div");
       stockList.className = "portfolio__stocklist";
       stockList.innerHTML = `
-                    <div class="portfolio__stocklist-name"> ${companySymbol} </div>
+                    <div class="portfolio__stocklist-name" id=${companySymbol}> ${companySymbol} </div>
                     <div class="portfolio__stocklist-chart${i}"></div>
-                    <div class="portfolio__stocklist-price"> \$${companyPrice.toFixed(
-                      2
-                    )} </div>
+                    <div class="portfolio__stocklist-price" id=${companySymbol}> \$${companyPrice.toFixed(
+        2
+      )} </div>
                 `;
       document
         .querySelector(".portfolio__stocklist-container")
@@ -566,11 +574,11 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       const stockList = document.createElement("div");
       stockList.className = "portfolio__stocklist";
       stockList.innerHTML = `
-                    <div class="portfolio__stocklist-name"> ${companySymbol} </div>
+                    <div class="portfolio__stocklist-name" id=${companySymbol}> ${companySymbol} </div>
                     <div class="portfolio__stocklist-chart${i}"></div>
-                    <div class="portfolio__stocklist-price"> \$${companyPrice.toFixed(
-                      2
-                    )} </div>
+                    <div class="portfolio__stocklist-price" id=${companySymbol}> \$${companyPrice.toFixed(
+        2
+      )} </div>
                 `;
       document
         .querySelector(".portfolio__stocklist-container")
@@ -578,17 +586,44 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       drawChartGreenWatch(parsedData, i, "stock");
     }
   });
+  // CODE TO CREATE PORTFOLIO CHART DATA BELOW
+  // console.log("this is raw data", rawPortfolioPrices);
+  var portfolioArr;
+  var portfolioObj = {};
+  setTimeout(() => {
+    rawPortfolioPrices.forEach((el) => {
+      // console.log("test1");
+      if (el.value) {
+        let prevVal = 0;
+        if (portfolioObj[el.date]) {
+          prevVal = portfolioObj[el.date].value;
+        }
+        portfolioObj[el.date] = {
+          date: el.date,
+          value: prevVal + el.value,
+        };
+      }
+    });
+    portfolioArr = Object.values(portfolioObj);
 
-  //   console.log(rawPortfolioPrices);
-  const portfolioPricesArr = [];
-  const portfolioPrices = {};
-  rawPortfolioPrices.forEach((element) => {
-    if (!portfolioPrices[date] === element.date) {
-      portfolioPrices[date] = element.date;
-      portfolioPrices[value] = element.value;
-      portfolioPricesArr.push(portfolioPrices);
-    }
-  });
+    var initVal = (
+      Math.round(portfolioArr[portfolioArr.length - 1].value * 100) / 100
+    ).toFixed(2);
+
+    var defaultVal = portfolioArr[0].value;
+    var initDiff = initVal - defaultVal;
+    var initPercentage = (initVal * 100) / defaultVal - 100;
+    document.querySelector(".portfolio__header").innerHTML = `\$${initVal}`;
+    document.querySelector(
+      ".portfolio__header-change"
+    ).innerHTML = `\$${initDiff.toFixed(2)}(${initPercentage.toFixed(2)}%)`;
+
+    drawChartGreen(portfolioArr);
+
+    // console.log("arr of objects", portfolioArr);
+  }, 3000);
+
+  // CODE TO CREATEPORTFOLIO CHART DATA ABOVE
 
   function triggerWatch() {
     setTimeout(async () => {
@@ -614,11 +649,11 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           const watchList = document.createElement("div");
           watchList.className = "portfolio__watchlist";
           watchList.innerHTML = `
-                        <div class="portfolio__watchlist-name"> ${companySymbol} </div>
+                        <div class="portfolio__watchlist-name" id=${companySymbol}> ${companySymbol} </div>
                         <div class="portfolio__watchlist-chart${i}"></div>
-                        <div class="portfolio__watchlist-price"> \$${companyPrice.toFixed(
-                          2
-                        )} </div>
+                        <div class="portfolio__watchlist-price" id=${companySymbol}> \$${companyPrice.toFixed(
+            2
+          )} </div>
                     `;
           document
             .querySelector(".portfolio__watchlist-container")
@@ -628,11 +663,11 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           const watchList = document.createElement("div");
           watchList.className = "portfolio__watchlist";
           watchList.innerHTML = `
-                        <div class="portfolio__watchlist-name"> ${companySymbol} </div>
+                        <div class="portfolio__watchlist-name" id=${companySymbol}> ${companySymbol} </div>
                         <div class="portfolio__watchlist-chart${i}"></div>
-                        <div class="portfolio__watchlist-price"> \$${companyPrice.toFixed(
-                          2
-                        )} </div>
+                        <div class="portfolio__watchlist-price" id=${companySymbol}> \$${companyPrice.toFixed(
+            2
+          )} </div>
                     `;
           document
             .querySelector(".portfolio__watchlist-container")
@@ -643,6 +678,10 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     }, 1000);
   }
   triggerWatch();
-});
 
-// < div class="portfolio__stocklist-shares" > ${ ownedCompanyShare } shares </div >
+  var targetStock = document.querySelector(".portfolio__sidebar");
+  targetStock.addEventListener("click", (event) => {
+    targetStockSymbol = event.target.getAttribute("id");
+    window.location.href = `/stocks/${targetStockSymbol}`;
+  });
+});

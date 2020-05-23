@@ -1,7 +1,8 @@
 import { handleErrors, backendUrl } from "./utils.js";
 
 window.addEventListener("DOMContentLoaded", async (e) => {
-  const res = await fetch(`${backendUrl}/stocks/AAPL`);
+  let pathName = window.location.pathname.split("/")[2];
+  const res = await fetch(`${backendUrl}/stocks/${pathName}`);
   const data = await res.json();
   const {
     name,
@@ -16,10 +17,11 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     dividendYield,
     averageVolume,
   } = data.stock;
-
+  console.log(data.stock);
   const modMarketCap = `$${marketCap / 1000000000}B`;
   const modAverageVolume = `${averageVolume / 1000000}M`;
 
+  document.querySelector(".company__title").innerHTML = name;
   document.querySelector(".company__about-text").innerHTML = description;
   document.querySelector(".company__about-ceo-data").innerHTML = ceo;
   document.querySelector(
@@ -42,6 +44,31 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     ".company__about-avgvolume-data"
   ).innerHTML = modAverageVolume;
   document.querySelector(".company__buy-title").innerHTML = `Buy ${symbol}`;
+  let cashBalance = localStorage.getItem("ROCKINHOOD_CURRENT_CASH_BALANCE");
+
+  function updateBuyingPower(balance) {
+    document.querySelector(
+      ".company__buy-buying-power"
+    ).innerHTML = `\$${balance} Buying Power Available`;
+  }
+
+  updateBuyingPower(cashBalance);
+
+  var purchaseButton = document.querySelector(".company__buy-order-button");
+  purchaseButton.addEventListener("click", (e) => {
+    var stockCost = document.querySelector(".company__buy-cost").innerHTML;
+    stockCost = stockCost.slice(1);
+    // console.log(stockCost);
+    // console.log(cashBalance);
+    if (parseInt(cashBalance, 10) - parseInt(stockCost, 10) < 0) {
+      alert("You don't have enough buying power!");
+      return;
+    } else {
+      var newBalance = parseInt(cashBalance, 10) - parseInt(stockCost, 10);
+      localStorage.setItem("ROCKINHOOD_CURRENT_CASH_BALANCE", newBalance);
+      updateBuyingPower(newBalance);
+    }
+  });
 
   const chartInfoRes = await fetch(`${backendUrl}/stocks/chartinfo/${symbol}`);
   const chartData = await chartInfoRes.json();
@@ -57,6 +84,13 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   var initVal = (
     Math.round(parsedData[parsedData.length - 1].value * 100) / 100
   ).toFixed(2);
+  document.querySelector(".company__buy-price").innerHTML = `\$${initVal}`;
+  const numShares = document.querySelector(".company__buy-share-input");
+  numShares.addEventListener("change", (event) => {
+    let estCost = event.target.value * initVal;
+    document.querySelector(".company__buy-cost").innerHTML = `\$${estCost}`;
+  });
+
   var defaultVal = parsedData[0].value; //*** */
   var initDiff = initVal - defaultVal; //*** */
   var initPercentage = (initVal * 100) / defaultVal - 100;

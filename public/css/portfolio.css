@@ -1,164 +1,167 @@
 /* Navbar */
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 .navbar {
-    box-shadow: none;
-    background-color: #ffffff;
+  box-shadow: none;
+  background-color: #ffffff;
 }
 
 .navbar__rockinhood {
-    margin-left: 40px;
+  margin-left: 40px;
 }
 
 .navbar__rockinhood:hover {
-    filter: invert(54%) sepia(91%) saturate(3430%) hue-rotate(90deg) brightness(105%) contrast(107%);
+  filter: invert(54%) sepia(91%) saturate(3430%) hue-rotate(90deg)
+    brightness(105%) contrast(107%);
 }
 
 .searchbar-container {
-    display: flex;
-    align-items: center;
-    line-height: 20px;
-    position: relative;
-    right: 75px;
-    border: 1px solid rgba(4, 13, 20, 0.1);
-    border-radius: 4px;
+  display: flex;
+  align-items: center;
+  line-height: 20px;
+  position: relative;
+  right: 75px;
+  border: 1px solid rgba(4, 13, 20, 0.1);
+  border-radius: 4px;
 }
 
 .searchbar-container:focus-within {
-    border: none;
-    box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
+  border: none;
+  box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
 }
 
 .searchbar-icon {
-    padding: 5px 10px;
-    color: rgba(4, 13, 20, 0.5);
+  padding: 5px 10px;
+  color: rgba(4, 13, 20, 0.5);
 }
 
 .searchbar-input-field {
-    font-size: 15px;
-    resize: none;
-    font-weight: 400;
-    height: 35px;
-    width: 450px;
-    border: none;
+  font-size: 15px;
+  resize: none;
+  font-weight: 400;
+  height: 35px;
+  width: 450px;
+  border: none;
 }
 
 .searchbar-input-field:focus {
-    outline: none;
-    border: none;
+  outline: none;
+  border: none;
 }
 
 .navbar__nav-container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .navbar__nav {
-    font-size: 13px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    margin: 0px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin: 0px;
 }
 
 .navbar__nav-free-stocks {
-    margin-right: 35px;
-    list-style: none;
+  margin-right: 35px;
+  list-style: none;
 }
 
 .navbar__nav-porfolio {
-    margin-right: 35px;
-    color: #040d14;
-    list-style: none;
+  margin-right: 35px;
+  color: #040d14;
+  list-style: none;
 }
 
 .navbar__nav-cash {
-    margin-right: 35px;
-    color: #040d14;
-    list-style: none;
+  margin-right: 35px;
+  color: #040d14;
+  list-style: none;
 }
 
 .navbar__nav-messages {
-    margin-right: 35px;
-    list-style: none;
+  margin-right: 35px;
+  list-style: none;
 }
 
 .navbar__nav-account {
-    margin-right: 35px;
-    list-style: none;
+  margin-right: 35px;
+  list-style: none;
 }
 
 .navbar__nav-free-stocks:hover {
-    cursor: not-allowed;
-    color: rgb(0, 200, 5);
+  cursor: not-allowed;
+  color: rgb(0, 200, 5);
 }
 
 .navbar__nav-porfolio:hover {
-    cursor: pointer;
-    text-decoration: none;
-    color: rgb(0, 200, 5);
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(0, 200, 5);
 }
 
 .navbar__nav-cash:hover {
-    cursor: not-allowed;
-    text-decoration: none;
-    color: rgb(0, 200, 5);
+  cursor: not-allowed;
+  text-decoration: none;
+  color: rgb(0, 200, 5);
 }
 
 .navbar__nav-messages:hover {
-    cursor: not-allowed;
-    color: rgb(0, 200, 5);
+  cursor: not-allowed;
+  color: rgb(0, 200, 5);
 }
 
 .navbar__nav-account:hover {
-    cursor: pointer;
-    color: rgb(0, 200, 5);
+  cursor: pointer;
+  color: rgb(0, 200, 5);
 }
 
 .navbar__account {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 40px;
-    border: 1px solid rgba(4, 13, 20, 0.2);
-    border-radius: 4px;
-    position: fixed;
-    top: 50px;
-    right: 50px;
-    z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  border: 1px solid rgba(4, 13, 20, 0.2);
+  border-radius: 4px;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  z-index: 2;
 }
 
 .navigation__status {
-    position: absolute;
+  position: absolute;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .navbar__account-signout {
-    font-size: 14px;
-    font-weight: 700;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 /* Body */
 .portfolio__body {
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  width: 100%;
 }
 
 .portfolio__header {
-    font-size: 30px;
-    line-height: 40px;
-    font-weight: 500;
-    letter-spacing: -0.2px;
-    position: relative;
-    left: 30%;
+  font-size: 30px;
+  line-height: 40px;
+  font-weight: 500;
+  letter-spacing: -0.2px;
+  position: relative;
+  left: 30%;
+  /* top: 98px; */
 }
 .portfolio__header-change {
   font-size: 15px;
@@ -167,51 +170,52 @@ body {
   letter-spacing: -0.2px;
   position: relative;
   left: 30%;
+  /* top: 95px; */
 }
 .portfolio__chart {
-    width: 700px;
-    height: 300px;
-    position: relative;
-    top: 30px;
-    left: 30%;
+  width: 700px;
+  height: 300px;
+  position: relative;
+  top: 30px;
+  left: 30%;
 }
 
 .portfolio__fund {
-    border: 1px solid rgba(4, 13, 20, 0.1);
-    border-radius: 4px;
-    width: 700px;
-    height: 130px;
-    position: relative;
-    top: 100px;
-    left: 30%;
+  border: 1px solid rgba(4, 13, 20, 0.1);
+  border-radius: 4px;
+  width: 700px;
+  height: 130px;
+  position: relative;
+  top: 100px;
+  left: 30%;
 }
 
 .portfolio__fund-header {
-    color: #6f787e;
-    font-weight: 700;
-    font-size: 13px;
-    margin: 18px 0px 10px 15px;
+  color: #6f787e;
+  font-weight: 700;
+  font-size: 13px;
+  margin: 18px 0px 10px 15px;
 }
 
 .portfolio__fund-text {
-    color: #040d14;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 20px;
-    margin: 0px 0px 20px 15px;
+  color: #040d14;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0px 0px 20px 15px;
 }
 
 .portfolio__fund-link {
-    color: rgb(0, 200, 5);
-    margin: 0px 0px 0px 15px;
-    font-size: 13px;
-    font-weight: 700;
+  color: rgb(0, 200, 5);
+  margin: 0px 0px 0px 15px;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .portfolio__fund-link:hover {
-    color: rgb(0, 200, 5);
-    text-decoration: none;
-    cursor: not-allowed;
+  color: rgb(0, 200, 5);
+  text-decoration: none;
+  cursor: not-allowed;
 }
 
 /* .portfolio__popular {
@@ -270,37 +274,37 @@ body {
 } */
 
 .portfolio__split {
-    border-bottom: 1px solid rgba(4, 13, 20, 0.1);
-    width: 29%;
-    position: relative;
-    top: 378px;
-    left: 30%;
-    margin-bottom: 20px;
+  border-bottom: 1px solid rgba(4, 13, 20, 0.1);
+  width: 29%;
+  position: relative;
+  top: 378px;
+  left: 30%;
+  margin-bottom: 20px;
 }
 
 .portfolio__sidebar {
-    display: flex;
-    position: fixed;
-    left: 61%;
-    flex-flow: column wrap;
-    align-items: center;
-    width: 250px;
+  display: flex;
+  position: fixed;
+  left: 61%;
+  flex-flow: column wrap;
+  align-items: center;
+  width: 250px;
 }
 
 .portfolio__stocklist-container {
-    width: 250px;
-    /* position: fixed;
+  width: 250px;
+  /* position: fixed;
     left: 61%; */
-    /* display: flex;
+  /* display: flex;
     flex-flow: row wrap; */
-    box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
+  box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
 }
 
 .portfolio__watchlist-container {
-    width: 250px;
-    /* position: fixed;
+  width: 250px;
+  /* position: fixed;
     left: 61%; */
-    box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
+  box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
 }
 
 /* .stocklist-col1 {
@@ -310,137 +314,135 @@ body {
     align-items: center;
 } */
 
-
 .portfolio__stocklist-title {
-    font-size: 15px;
-    font-weight: 700;
-    border-top: 1px solid rgba(4, 13, 20, 0.2);
-    border-bottom: 1px solid rgba(4, 13, 20, 0.2);
-    color: #040d14;
-    padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  border-top: 1px solid rgba(4, 13, 20, 0.2);
+  border-bottom: 1px solid rgba(4, 13, 20, 0.2);
+  color: #040d14;
+  padding: 14px 20px;
 }
 
 .portfolio__stocklist {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 15%;
-    font-weight: 500;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 15%;
+  font-weight: 500;
 }
 
 .portfolio__stocklist-name {
-    font-size: 13px;
-    font-weight: 700;
-    padding: 3% 3% 3% 10%;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3% 3% 3% 10%;
+  cursor: pointer;
 }
 
 .portfolio__stocklist-shares {
-    font-size: 11px;
-    font-weight: 500;
+  font-size: 11px;
+  font-weight: 500;
 }
 
-.portfolio__stocklist-chart{
-    justify-self: center;
-    padding: 5px 5px;
+.portfolio__stocklist-chart {
+  justify-self: center;
+  padding: 5px 5px;
 }
 
-.portfolio__stocklist-price{
-    font-size: 13px;
-    font-weight: 700;
-    padding: 3% 10% 3% 3%;
+.portfolio__stocklist-price {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3% 10% 3% 3%;
+  cursor: pointer;
 }
-
 
 .portfolio__watchlist-title {
-    font-size: 15px;
-    font-weight: 700;
-    border-top: 1px solid rgba(4, 13, 20, 0.2);
-    border-bottom: 1px solid rgba(4, 13, 20, 0.2);
-    color: #040d14;
-    padding: 14px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  border-top: 1px solid rgba(4, 13, 20, 0.2);
+  border-bottom: 1px solid rgba(4, 13, 20, 0.2);
+  color: #040d14;
+  padding: 14px 20px;
 }
 
 .portfolio__watchlist {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 15%;
+  font-weight: 500;
+}
+
+.portfolio__watchlist-name {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3% 3% 3% 10%;
+  cursor: pointer;
+}
+.portfolio__watchlist-chart {
+  justify-self: center;
+  padding: 5px 5px;
+}
+
+.portfolio__watchlist-price {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 3% 10% 3% 3%;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1440px) {
+  .portfolio__body {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 15%;
-    font-weight: 500;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 100%;
+  }
 }
-
-.portfolio__watchlist-name{
-    font-size: 13px;
-    font-weight: 700;
-    padding: 3% 3% 3% 10%;
-}
-.portfolio__watchlist-chart{
-    justify-self: center;
-    padding: 5px 5px;
-}
-
-.portfolio__watchlist-price{
-    font-size: 13px;
-    font-weight: 700;
-    padding: 3% 10% 3% 3%;
-}
-
-
-@media screen and (min-width:1440px) {
-    .portfolio__body {
-        display: flex;
-        flex-direction: column;
-        margin-top: 100px;
-        width: 100%;
-    }
-}
-
 
 @media screen and (max-width: 1920px) {
-    .portfolio__body {
-        display: flex;
-        flex-direction: column;
-        margin-top: 100px;
-        width: 70%;
-        position: relative;
-    }
+  .portfolio__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 70%;
+    position: relative;
+  }
 
-    .portfolio__sidebar {
-        display: flex;
-        position: fixed;
-        left: 71%;
-        flex-flow: column wrap;
-        align-items: center;
-        width: 250px;
-    }
+  .portfolio__sidebar {
+    display: flex;
+    position: fixed;
+    left: 71%;
+    flex-flow: column wrap;
+    align-items: center;
+    width: 250px;
+  }
 
-    .searchbar-container {
-        width: 30%;
-    }
-
+  .searchbar-container {
+    width: 30%;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    .portfolio__body {
-        display: flex;
-        flex-direction: column;
-        margin-top: 100px;
-        width: 50%;
-        position: relative;
-    }
+  .portfolio__body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    width: 50%;
+    position: relative;
+  }
 
-    .portfolio__sidebar {
-        display: flex;
-        position: fixed;
-        left: 61%;
-        flex-flow: column wrap;
-        align-items: center;
-        width: 250px;
-    }
+  .portfolio__sidebar {
+    display: flex;
+    position: fixed;
+    left: 61%;
+    flex-flow: column wrap;
+    align-items: center;
+    width: 250px;
+  }
 
-    .searchbar-container {
-        width: 10%;
-        margin-right: 0px;
-        padding-right: 0px;
-    }
-
+  .searchbar-container {
+    width: 10%;
+    margin-right: 0px;
+    padding-right: 0px;
+  }
 }

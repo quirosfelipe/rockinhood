@@ -51,11 +51,12 @@ logInForm.addEventListener("submit", async (e) => {
     }
     const {
       token,
-      user: { id },
+      user: { id, cashBalance },
     } = await res.json();
     // storage access_token in localStorage:
     localStorage.setItem("ROCKINHOOD_ACCESS_TOKEN", token);
     localStorage.setItem("ROCKINHOOD_CURRENT_USER_ID", id);
+    localStorage.setItem("ROCKINHOOD_CURRENT_CASH_BALANCE", cashBalance);
     // redirect to portfolio page:
     window.location.href = "/portfolio";
   } catch (err) {
@@ -66,17 +67,20 @@ logInForm.addEventListener("submit", async (e) => {
 const demoButton = document.querySelector(".login__form-demo-button");
 demoButton.addEventListener("click", async (e) => {
   try {
-    const res = await fetch(`${backendUrl}/users/guest`, { method: "POST" });
+    const res = await fetch(`${backendUrl}/users/guest`, {
+      method: "POST",
+    });
     if (!res.ok) {
       throw res;
     }
     const {
       token,
-      user: { id },
+      user: { id, cashBalance },
     } = await res.json();
     // storage access_token in localStorage:
     localStorage.setItem("ROCKINHOOD_ACCESS_TOKEN", token);
     localStorage.setItem("ROCKINHOOD_CURRENT_USER_ID", id);
+    localStorage.setItem("ROCKINHOOD_CURRENT_CASH_BALANCE", cashBalance);
     // redirect to home page to see all tweets:
     window.location.href = "/portfolio";
   } catch (err) {

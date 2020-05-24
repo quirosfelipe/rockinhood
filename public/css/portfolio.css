@@ -25,6 +25,7 @@ body {
   right: 75px;
   border: 1px solid rgba(4, 13, 20, 0.1);
   border-radius: 4px;
+  width: 20%;
 }
 
 .searchbar-container:focus-within {
@@ -151,7 +152,7 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 100px;
-  width: 100%;
+  width: 85%;
   /* position: relative; */
   /* left: -5%; */
 }

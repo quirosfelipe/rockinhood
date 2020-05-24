@@ -13,28 +13,28 @@ app.use(express.static(path.join(__dirname, "public")));
 
 //Define routes
 app.get("/", (req, res) => {
-  res.render("index", { title: "It's Time to Do Money" });
+    res.render("index", { title: "It's Time to Do Money" });
 });
 
 //Implement this to the root path with authentication
 app.get("/login", (req, res) => {
-  res.render("login", { title: "Log In" });
+    res.render("login", { title: "Log In" });
 });
 
 app.get("/signup", (req, res) => {
-  res.render("signup", { title: "Signup" });
+    res.render("signup", { title: "Signup" });
 });
 
 app.get("/portfolio", (req, res) => {
-  res.render("portfolio", { title: "Portfolio" });
+    res.render("portfolio", { title: "Portfolio" });
 });
 
 app.get("/stocks/:id", (req, res) => {
-  // const companyInfo = [name, symbol, description, ceo, employees, headquarters, founded, marketCap, priceEarningRatio, dividendYield, averageVolume];
-  res.render("company", { title: "company name" });
+    // const companyInfo = [name, symbol, description, ceo, employees, headquarters, founded, marketCap, priceEarningRatio, dividendYield, averageVolume];
+    res.render("company", { title: "company name" });
 });
 
 //Define port and start listening for connections
-const port = Number.parseInt(process.env.PORT, 10) || 4000;
+const port = Number.parseInt(process.env.PORT, 10) || 4001;
 
 app.listen(port, () => console.log(`Listening on port ${port}...`));

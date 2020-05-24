@@ -42,7 +42,7 @@ body {
   resize: none;
   font-weight: 400;
   height: 35px;
-  width: 450px;
+  width: 100%;
   border: none;
 }
 
@@ -133,7 +133,7 @@ body {
 }
 
 .navigation__status {
-  position: absolute;
+  position: fixed;
 }
 
 .hidden {
@@ -152,6 +152,8 @@ body {
   flex-direction: column;
   margin-top: 100px;
   width: 100%;
+  /* position: relative; */
+  /* left: -5%; */
 }
 
 .portfolio__header {
@@ -173,8 +175,8 @@ body {
   /* top: 95px; */
 }
 .portfolio__chart {
-  width: 700px;
-  height: 300px;
+  width: 15%;
+  height: 10%;
   position: relative;
   top: 30px;
   left: 30%;
@@ -218,61 +220,6 @@ body {
   cursor: not-allowed;
 }
 
-/* .portfolio__popular {
-    font-size: 23px;
-    font-weight: 500;
-    line-height: 28px;
-    color: #040d14;
-    position: relative;
-    top: 170px;
-    left: 30%;
-    display: flex;
-} */
-
-/* .portfolio__movers {
-    font-size: 23px;
-    font-weight: 500;
-    line-height: 28px;
-    color: #040d14;
-    position: relative;
-    top: 270px;
-    left: 30%;
-    display: flex;
-} */
-
-/* .portfolio__showmore1 {
-    font-size: 13px;
-    color: rgb(0, 200, 5);
-    display: inline-block;
-    position: relative;
-    top: 149px;
-    left: 55%;
-} */
-
-/* .portfolio__showmore2 {
-    font-size: 13px;
-    color: rgb(0, 200, 5);
-    display: inline-block;
-    position: relative;
-    top: 249px;
-    left: 55%;
-} */
-
-/* .portfolio__news-container {
-    position: relative;
-    top: 150px;
-}
-
-.portfolio__news-title {
-    font-size: 23px;
-    font-weight: 500;
-    line-height: 28px;
-    color: #040d14;
-    position: relative;
-    left: 30%;
-    margin-bottom: 20px;
-} */
-
 .portfolio__split {
   border-bottom: 1px solid rgba(4, 13, 20, 0.1);
   width: 29%;
@@ -293,26 +240,14 @@ body {
 
 .portfolio__stocklist-container {
   width: 250px;
-  /* position: fixed;
-    left: 61%; */
-  /* display: flex;
-    flex-flow: row wrap; */
   box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
 }
 
 .portfolio__watchlist-container {
   width: 250px;
-  /* position: fixed;
-    left: 61%; */
   box-shadow: 0px 0px 25px 0px rgba(0, 250, 5, 0.1);
+  position: relative;
 }
-
-/* .stocklist-col1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-} */
 
 .portfolio__stocklist-title {
   font-size: 15px;
@@ -390,22 +325,62 @@ body {
   cursor: pointer;
 }
 
-@media screen and (min-width: 1440px) {
-  .portfolio__body {
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;
-    width: 100%;
-  }
+.historical {
+  position: absolute;
+  bottom: -15%;
+  font-size: 11px;
+  color: #040d14;
+  font-weight: 500;
+  width: 84%;
 }
 
-@media screen and (max-width: 1920px) {
+@media screen and (max-width: 1440px) {
+  .portfolio__header {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    position: relative;
+    left: 25%;
+    /* top: 98px; */
+  }
+  .portfolio__header-change {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    position: relative;
+    left: 25%;
+    /* top: 95px; */
+  }
+  .portfolio__chart {
+    width: 15%;
+    height: 10%;
+    position: relative;
+    top: 30px;
+    left: 25%;
+  }
+
+  .portfolio__fund {
+    border: 1px solid rgba(4, 13, 20, 0.1);
+    border-radius: 4px;
+    width: 700px;
+    height: 130px;
+    position: relative;
+    top: 100px;
+    left: 25%;
+  }
+
+}
+
+@media screen and (max-width: 1925px) {
   .portfolio__body {
     display: flex;
     flex-direction: column;
     margin-top: 100px;
     width: 70%;
     position: relative;
+    left: -5%;
   }
 
   .portfolio__sidebar {

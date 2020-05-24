@@ -2,9 +2,11 @@ import { handleErrors, backendUrl } from "./utils.js";
 
 window.addEventListener("DOMContentLoaded", async (e) => {
   let pathName = window.location.pathname.split("/")[2];
+
   const res = await fetch(`${backendUrl}/stocks/${pathName}`);
   const data = await res.json();
   const {
+    id,
     name,
     symbol,
     description,
@@ -17,7 +19,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     dividendYield,
     averageVolume,
   } = data.stock;
-  console.log(data.stock);
+  // console.log(id);
   const modMarketCap = `$${marketCap / 1000000000}B`;
   const modAverageVolume = `${averageVolume / 1000000}M`;
 
@@ -43,8 +45,9 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   document.querySelector(
     ".company__about-avgvolume-data"
   ).innerHTML = modAverageVolume;
-  document.querySelector(".company__buy-title").innerHTML = `Buy ${symbol}`;
+  document.querySelector(".company__buy-title").innerHTML = `Buy / Sell ${symbol}`;
   let cashBalance = localStorage.getItem("ROCKINHOOD_CURRENT_CASH_BALANCE");
+  let userId = localStorage.getItem("ROCKINHOOD_CURRENT_USER_ID");
 
   function updateBuyingPower(balance) {
     document.querySelector(
@@ -52,21 +55,52 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     ).innerHTML = `\$${balance} Buying Power Available`;
   }
 
-  updateBuyingPower(cashBalance);
+  updateBuyingPower(parseInt(cashBalance, 10));
+
+  let numberShares;
+  const numShares = document.querySelector(".company__buy-share-input");
+  numShares.addEventListener("change", (event) => {
+    numberShares = event.target.value;
+    let estCost = numberShares * initVal;
+    document.querySelector(".company__buy-cost").innerHTML = `\$${estCost.toFixed(2)}`;
+  });
 
   var purchaseButton = document.querySelector(".company__buy-order-button");
-  purchaseButton.addEventListener("click", (e) => {
+  purchaseButton.addEventListener("click", async (e) => {
     var stockCost = document.querySelector(".company__buy-cost").innerHTML;
     stockCost = stockCost.slice(1);
-    // console.log(stockCost);
-    // console.log(cashBalance);
     if (parseInt(cashBalance, 10) - parseInt(stockCost, 10) < 0) {
       alert("You don't have enough buying power!");
       return;
     } else {
       var newBalance = parseInt(cashBalance, 10) - parseInt(stockCost, 10);
-      localStorage.setItem("ROCKINHOOD_CURRENT_CASH_BALANCE", newBalance);
+      // localStorage.setItem("ROCKINHOOD_CURRENT_CASH_BALANCE", newBalance);
       updateBuyingPower(newBalance);
+
+      const body = { company: name, shares: numberShares, price: initVal }
+      const res = await fetch(`${backendUrl}/transactions/${userId}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+      const data = await res.json();
+      // debugger;
+      // console.log(data);
+      const balance = data.userfunds.cashBalance;
+      // console.log(balance);
+      localStorage.setItem("ROCKINHOOD_CURRENT_CASH_BALANCE", balance);
+      window.location.href = "/portfolio";
+    }
+  });
+
+  const sellButton = document.querySelector(".company__sell-order-button");
+  sellButton.addEventListener("click", async (e) => {
+    console.log(numberShares);
+    if (numberShares >= 0) {
+      var stockCost = document.querySelector(".company__buy-cost").innerHTML;
+      stockCost = stockCost.slice(1);
+      var newBal = parseInt(stockCost, 10) + parseInt(cashBalance, 10);
+      updateBuyingPower(newBal);
+      localStorage.setItem("ROCKINHOOD_CURRENT_CASH_BALANCE", newBal);
+      const body = { price: initVal };
+      await fetch(`${backendUrl}/transactions/${symbol}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+      window.location.href = "/portfolio";
     }
   });
 
@@ -80,16 +114,10 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     .filter((element) => {
       if (element.value) return true;
     });
-
   var initVal = (
     Math.round(parsedData[parsedData.length - 1].value * 100) / 100
   ).toFixed(2);
   document.querySelector(".company__buy-price").innerHTML = `\$${initVal}`;
-  const numShares = document.querySelector(".company__buy-share-input");
-  numShares.addEventListener("change", (event) => {
-    let estCost = event.target.value * initVal;
-    document.querySelector(".company__buy-cost").innerHTML = `\$${estCost}`;
-  });
 
   var defaultVal = parsedData[0].value; //*** */
   var initDiff = initVal - defaultVal; //*** */
@@ -103,16 +131,43 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   } else {
     drawChartGreen(parsedData);
   }
+
+  const watchListRes = await fetch(`${backendUrl}/watchlists/${userId}`);
+  const watchListData = await watchListRes.json();
+
+  let checkIfInWatchlist = false;
+  watchListData.watchlists.forEach(company => {
+    if (company.Company.symbol === symbol) {
+      checkIfInWatchlist = true;
+    }
+  });
+
+  if (checkIfInWatchlist) {
+    document.querySelector(".company__remove-watch").innerHTML = "Remove from Watchlist";
+  } else {
+    document.querySelector(".company__remove-watch").innerHTML = "Add to Watchlist";
+  }
+
+  const addRemoveButton = document.querySelector(".company__remove-watch");
+  addRemoveButton.addEventListener("click", async (event) => {
+    if (addRemoveButton.innerHTML === "Remove from Watchlist") {
+      await fetch(`${backendUrl}/watchlists/${id}`, { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ userId }) });
+      window.location.href = "/portfolio";
+    } else {
+      await fetch(`${backendUrl}/watchlists/${userId}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ symbol }) });
+      window.location.href = "/portfolio";
+    }
+  })
 });
 
 function drawChartGreen(data) {
   // set the dimensions and margins of the graph
   var margin = {
-      top: 50,
-      right: 30,
-      bottom: 30,
-      left: 20,
-    },
+    top: 50,
+    right: 30,
+    bottom: 30,
+    left: 20,
+  },
     width = 700 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
 
@@ -240,7 +295,7 @@ function drawChartGreen(data) {
       (Math.round(data[0].value * 100) / 100).toFixed(2); //**** */
     var diffPercentage =
       ((Math.round(data[data.length - 1].value * 100) / 100).toFixed(2) * 100) / //**** */
-        (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
+      (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
       100; //**** */
     d3.select(".company__price").html(`<span> \$${moveVal}</span>`);
     d3.select(".company__price-change").html(
@@ -253,11 +308,11 @@ function drawChartGreen(data) {
 function drawChartRed(data) {
   // set the dimensions and margins of the graph
   var margin = {
-      top: 50,
-      right: 30,
-      bottom: 30,
-      left: 60,
-    },
+    top: 50,
+    right: 30,
+    bottom: 30,
+    left: 60,
+  },
     width = 700 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
 
@@ -384,7 +439,7 @@ function drawChartRed(data) {
       (Math.round(data[0].value * 100) / 100).toFixed(2); //**** */
     var diffPercentage =
       ((Math.round(data[data.length - 1].value * 100) / 100).toFixed(2) * 100) / //**** */
-        (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
+      (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
       100; //**** */
     d3.select(".company__price").html(`<span> \$${moveVal}</span>`);
     d3.select(".company__price-change").html(

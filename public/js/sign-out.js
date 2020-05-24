@@ -11,5 +11,6 @@ const signOutButton = document.querySelector(".navbar__account-signout");
 signOutButton.addEventListener("click", (event) => {
   localStorage.removeItem("ROCKINHOOD_ACCESS_TOKEN");
   localStorage.removeItem("ROCKINHOOD_CURRENT_USER_ID");
+  localStorage.removeItem("ROCKINHOOD_CURRENT_CASH_BALANCE");
   window.location.href = "/";
 });

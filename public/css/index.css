@@ -743,12 +743,12 @@ body {
 
 .section6__createdby {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     position: relative;
-    left: 10%;
-    top: 260px;
-    color: #ffffff;
+    left: -5.8%;
+    top: 26%;
+    color: rgb(0, 200, 5);
     font-size: 20px;
     font-weight: 600;
 }
@@ -760,6 +760,12 @@ body {
     padding: 10px 10px;
     position: relative;
     left: 20px;
+    text-decoration: none;
+}
+
+.section6__createdby-name:hover {
+    text-decoration: none;
+    color: rgb(0, 200, 5);
 }
 
 .section6__createdby-git {
@@ -892,6 +898,53 @@ body {
     color: rgb(0, 200, 5);
     cursor: not-allowed;
 }
+
+@media screen and (max-width: 1925px) {
+    .section6__links-container {
+        color: #ffffff;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 610px;
+        position: relative;
+        left: 16%;
+        top: 60px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 28px;
+    }
+
+    .section6__createdby {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+        left: -15.8%;
+        top: 22%;
+        color: rgb(0, 200, 5);
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .section6__snacks-container {
+        fill: #ffffff;
+        position: relative;
+        left: -4%;
+        top: 60px;
+        color: #ffffff;
+    }
+
+    .section7 {
+        position: relative;
+        top: 45px;
+        left: 20%;
+        width: 1200px;
+        font-size: 15px;
+        line-height: 24px;
+        color: #79858b;
+        letter-spacing: 0.2px;
+    }
+}
+
 
 @media screen and (max-width: 1700px) {
     .section1__text {

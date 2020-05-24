@@ -53,11 +53,12 @@ signUpForm.addEventListener("submit", async (e) => {
     }
     const {
       token,
-      user: { id },
+      user: { id, cashBalance },
     } = await res.json();
     // storage access_token in localStorage:
     localStorage.setItem("ROCKINHOOD_ACCESS_TOKEN", token);
     localStorage.setItem("ROCKINHOOD_CURRENT_USER_ID", id);
+    localStorage.setItem("ROCKINHOOD_CURRENT_CASH_BALANCE", cashBalance);
     // redirect to portfolio page:
     window.location.href = "/portfolio";
   } catch (err) {

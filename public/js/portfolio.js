@@ -619,9 +619,9 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     ).innerHTML = `\$${initDiff.toFixed(2)}(${initPercentage.toFixed(2)}%)`;
 
     if (initVal > defaultVal) {
-      drawChartRed(portfolioArr);
-    } else {
       drawChartGreen(portfolioArr);
+    } else {
+      drawChartRed(portfolioArr);
     }
     // console.log("arr of objects", portfolioArr);
   }, 3000);

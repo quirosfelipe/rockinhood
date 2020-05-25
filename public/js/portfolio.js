@@ -25,46 +25,46 @@ let targetStockSymbol;
 //   "2020-04-20": 276.92999267578125,
 // };
 
-document.addEventListener("DOMContentLoaded", () => {
-  var arr = [];
-  function parseData(data) {
-    for (var i in data) {
-      //   console.log(arr);
-      arr.unshift({
-        date: new Date(i), //date
-        value: +data[i], //convert string to number
-      });
-    }
-    // console.log(arr);
-    return arr;
-  }
-  // //var parsedData = parseData(dates);
-  // var initVal = (
-  //   Math.round(parsedData[parsedData.length - 1].value * 100) / 100
-  // ).toFixed(2);
-  // var defaultVal = parsedData[0].value; //*** */
-  // var initDiff = initVal - defaultVal; //*** */
-  // var initPercentage = (initVal * 100) / defaultVal - 100;
-  // document.querySelector(".portfolio__header").innerHTML = `\$${initVal}`;
-  // document.querySelector(
-  //   ".portfolio__header-change"
-  // ).innerHTML = `\$${initDiff.toFixed(2)}(${initPercentage.toFixed(2)}%)`; //**** */
-  // if (arr[0].value > arr[arr.length - 1].value) {
-  //   drawChartRed(parsedData);
-  // } else {
-  //   console.log(arr[0].value, arr[arr.length - 1].value);
-  //   drawChartGreen(parsedData);
-  // }
-  // var parsedData2 = parseData(dates2);
-  //   var initVal2 = (Math.round(parsedData2[parsedData2.length - 1].value * 100) / 100).toFixed(2);
-  //   document.querySelector(".portfolio__watchlist-chart")
-  //   if (arr[0].value > arr[arr.length - 1].value) {
-  //       drawChartRedWatch(parsedData);
-  //   } else {
-  //       console.log(arr[0].value, arr[arr.length - 1].value);
-  //       drawChartGreenWatch(parsedData);
-  //   }
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   var arr = [];
+//   function parseData(data) {
+//     for (var i in data) {
+//       //   console.log(arr);
+//       arr.unshift({
+//         date: new Date(i), //date
+//         value: +data[i], //convert string to number
+//       });
+//     }
+//     // console.log(arr);
+//     return arr;
+//   }
+// //var parsedData = parseData(dates);
+// var initVal = (
+//   Math.round(parsedData[parsedData.length - 1].value * 100) / 100
+// ).toFixed(2);
+// var defaultVal = parsedData[0].value; //*** */
+// var initDiff = initVal - defaultVal; //*** */
+// var initPercentage = (initVal * 100) / defaultVal - 100;
+// document.querySelector(".portfolio__header").innerHTML = `\$${initVal}`;
+// document.querySelector(
+//   ".portfolio__header-change"
+// ).innerHTML = `\$${initDiff.toFixed(2)}(${initPercentage.toFixed(2)}%)`; //**** */
+// if (arr[0].value > arr[arr.length - 1].value) {
+//   drawChartRed(parsedData);
+// } else {
+//   console.log(arr[0].value, arr[arr.length - 1].value);
+//   drawChartGreen(parsedData);
+// }
+// var parsedData2 = parseData(dates2);
+//   var initVal2 = (Math.round(parsedData2[parsedData2.length - 1].value * 100) / 100).toFixed(2);
+//   document.querySelector(".portfolio__watchlist-chart")
+//   if (arr[0].value > arr[arr.length - 1].value) {
+//       drawChartRedWatch(parsedData);
+//   } else {
+//       console.log(arr[0].value, arr[arr.length - 1].value);
+//       drawChartGreenWatch(parsedData);
+//   }
+// });
 
 function drawChartGreen(data) {
   // set the dimensions and margins of the graph
@@ -586,8 +586,9 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       drawChartGreenWatch(parsedData, i, "stock");
     }
   });
+
   // CODE TO CREATE PORTFOLIO CHART DATA BELOW
-  // console.log("this is raw data", rawPortfolioPrices);
+
   var portfolioArr;
   var portfolioObj = {};
   setTimeout(() => {
@@ -619,9 +620,9 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     ).innerHTML = `\$${initDiff.toFixed(2)}(${initPercentage.toFixed(2)}%)`;
 
     if (initVal > defaultVal) {
-      drawChartRed(portfolioArr);
-    } else {
       drawChartGreen(portfolioArr);
+    } else {
+      drawChartRed(portfolioArr);
     }
     // console.log("arr of objects", portfolioArr);
   }, 3000);

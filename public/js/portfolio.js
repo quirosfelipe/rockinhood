@@ -561,7 +561,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       stockList.className = "portfolio__stocklist";
       stockList.innerHTML = `
                     <div class="portfolio__stocklist-name" id=${companySymbol}> ${companySymbol} </div>
-                    <div class="portfolio__stocklist-chart${i}"></div>
+                    <div class="portfolio__stocklist-chart${i}" id=${companySymbol}></div>
                     <div class="portfolio__stocklist-price" id=${companySymbol}> \$${companyPrice.toFixed(
         2
       )} </div>
@@ -575,7 +575,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       stockList.className = "portfolio__stocklist";
       stockList.innerHTML = `
                     <div class="portfolio__stocklist-name" id=${companySymbol}> ${companySymbol} </div>
-                    <div class="portfolio__stocklist-chart${i}"></div>
+                    <div class="portfolio__stocklist-chart${i}" id=${companySymbol}></div>
                     <div class="portfolio__stocklist-price" id=${companySymbol}> \$${companyPrice.toFixed(
         2
       )} </div>
@@ -619,9 +619,9 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     ).innerHTML = `\$${initDiff.toFixed(2)}(${initPercentage.toFixed(2)}%)`;
 
     if (initVal > defaultVal) {
-      drawChartGreen(portfolioArr);
-    } else {
       drawChartRed(portfolioArr);
+    } else {
+      drawChartGreen(portfolioArr);
     }
     // console.log("arr of objects", portfolioArr);
   }, 3000);
@@ -653,7 +653,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           watchList.className = "portfolio__watchlist";
           watchList.innerHTML = `
                         <div class="portfolio__watchlist-name" id=${companySymbol}> ${companySymbol} </div>
-                        <div class="portfolio__watchlist-chart${i}"></div>
+                        <div class="portfolio__watchlist-chart${i}" id=${companySymbol}></div>
                         <div class="portfolio__watchlist-price" id=${companySymbol}> \$${companyPrice.toFixed(
             2
           )} </div>
@@ -667,7 +667,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           watchList.className = "portfolio__watchlist";
           watchList.innerHTML = `
                         <div class="portfolio__watchlist-name" id=${companySymbol}> ${companySymbol} </div>
-                        <div class="portfolio__watchlist-chart${i}"></div>
+                        <div class="portfolio__watchlist-chart${i}" id=${companySymbol}></div>
                         <div class="portfolio__watchlist-price" id=${companySymbol}> \$${companyPrice.toFixed(
             2
           )} </div>

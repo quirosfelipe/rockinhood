@@ -76,3 +76,14 @@
         left: -4%;
     }
 }
+
+@media screen and (min-width: 1925px){
+    .portfolio__news {
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        left: 30%;
+        margin-bottom: 70px;
+    }
+}

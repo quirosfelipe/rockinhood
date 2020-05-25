@@ -561,7 +561,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       stockList.className = "portfolio__stocklist";
       stockList.innerHTML = `
                     <div class="portfolio__stocklist-name" id=${companySymbol}> ${companySymbol} </div>
-                    <div class="portfolio__stocklist-chart${i}" id=${companySymbol}></div>
+                    <a class="portfolio__stocklist-chart${i}" id=${companySymbol} href="/stocks/${companySymbol}"></a>
                     <div class="portfolio__stocklist-price" id=${companySymbol}> \$${companyPrice.toFixed(
         2
       )} </div>
@@ -575,7 +575,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       stockList.className = "portfolio__stocklist";
       stockList.innerHTML = `
                     <div class="portfolio__stocklist-name" id=${companySymbol}> ${companySymbol} </div>
-                    <div class="portfolio__stocklist-chart${i}" id=${companySymbol}></div>
+                    <a class="portfolio__stocklist-chart${i}" id=${companySymbol} href="/stocks/${companySymbol}"></a>
                     <div class="portfolio__stocklist-price" id=${companySymbol}> \$${companyPrice.toFixed(
         2
       )} </div>
@@ -654,7 +654,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           watchList.className = "portfolio__watchlist";
           watchList.innerHTML = `
                         <div class="portfolio__watchlist-name" id=${companySymbol}> ${companySymbol} </div>
-                        <div class="portfolio__watchlist-chart${i}" id=${companySymbol}></div>
+                        <a class="portfolio__watchlist-chart${i}" id=${companySymbol} href="/stocks/${companySymbol}"></a>
                         <div class="portfolio__watchlist-price" id=${companySymbol}> \$${companyPrice.toFixed(
             2
           )} </div>
@@ -668,7 +668,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
           watchList.className = "portfolio__watchlist";
           watchList.innerHTML = `
                         <div class="portfolio__watchlist-name" id=${companySymbol}> ${companySymbol} </div>
-                        <div class="portfolio__watchlist-chart${i}" id=${companySymbol}></div>
+                        <a class="portfolio__watchlist-chart${i}" id=${companySymbol} href="/stocks/${companySymbol}"></a>
                         <div class="portfolio__watchlist-price" id=${companySymbol}> \$${companyPrice.toFixed(
             2
           )} </div>

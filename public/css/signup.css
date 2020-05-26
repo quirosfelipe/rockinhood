@@ -183,3 +183,9 @@
             "button button";
     }
 }
+
+@media screen and (max-width: 1520px) {
+    .signup__video-container {
+        display: none;
+    }
+}

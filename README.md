@@ -2,13 +2,14 @@
 
 Rockinhood recreates the vision of the famous Robinhood app allowing people to start investing in stocks breaking free from comission fees.
 
-Visit the live site here.
+Visit the live site [here](https://rockinhood.herokuapp.com/).
 
 # Key Features
 
 -   Users can sign up or use a demo account. 
--   Users can add stocks to their watchlist and buy them directly from the dashboard.
--   Users review the change of their portfolio prices through the interaction of the graph which include the price changes from the last 30 days. 
+-   Users can add stocks to their watchlist and buy them directly from the company page.
+- Users can delete stocks from their watchlist
+-   Users can review the change of their portfolio prices through the interaction of the graph which include the price changes from the last 30 days. 
 - Users can see the graphical behavior of different stocks prices.
 
 
@@ -21,6 +22,9 @@ Visit the live site here.
 -   D3js
 -   Bcryptjs
 -   Pug
+-  JWT
+-  Cors
+- JavaScript, HTML and CSS
 
 # Dates in JS
 
@@ -37,8 +41,8 @@ The following snippet shows how we solved this issue by mapping over the array o
 	    });
 
  # Plotting the graph 
-Trying to recreate the look and behavior of the graph in the spirit of Robinhood's app was another challenge we faced during  the making of Rokinhood. The approach to re-create the graph was made through the use of the **D3.js** JavaScript library  which allowed us to manipulate the data and bring it life using HTML, SVG, and CSS. 
-Creating the tooltip that allows to keep track of the date/value while hovering the graph was done by finding the closest X index of the mouse movement (bisecting the data) contained inside  the SVG  (rectangle) area which let us recover the mouse position and coordenates we needed  :
+Trying to recreate the look and behavior of the graph in the spirit of Robinhood's app was another challenge we faced during  the making of Rokinhood. The approach to re-create the graph was made through the use of the **D3.js** JavaScript library  which allowed us to manipulate the data and bring it to life using HTML, SVG, and CSS. 
+Creating the tooltip that allows to keep track of the date/value while hovering over the graph was done by finding the closest X index of the mouse movement (bisecting the data) contained inside  the SVG  (rectangle) area which let us recover the mouse position and coordenates we needed  :
 
     var bisect = d3.bisector(function (d) {
     return d.date;
@@ -72,6 +76,6 @@ The API only allows for 5 calls/seconds. We were able to overpass this issue by 
 
 # Planned Feature Components
 
- - Search bar
  - Improvements in transaction's functionalities
- - Remove stocks from watchlist
+ - Funding account from dashboard
+ - Add collection tags to categorize companies

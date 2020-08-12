@@ -1,17 +1,15 @@
 nav(class="navbar")
-    a(class="navbar__rockinhood" href="/portfolio") <img src="/assets/images/guitar-icon.png" width=40px>
-    div.spacer
-    div.searchbar-container
-        div.searchbar-icon <i class="fa fa-search" aria-hidden="true"></i>
-        div.searchbar-input
-            input(class="searchbar-input-field" placeholder="Search")
-    div.spacer
-    div(class="navbar__nav-container")
-        ul(class="navbar__nav")
-            li(class="navbar__nav-free-stocks") Free Stocks
-            a(class="navbar__nav-porfolio" href="/portfolio") Portfolio
-            li(class="navbar__nav-cash" href="/cash") Cash
-            li(class="navbar__nav-messages") Messages
-            li(class="navbar__nav-account") Account
+    div.navbar__left
+        a(class="navbar__rockinhood" href="/portfolio") Rockinhood <img src="/assets/images/guitar-icon.png" width=40px>
+        //- div.spacer
+        div.searchbar-container
+            div.searchbar-icon <i class="fa fa-search" aria-hidden="true"></i>
+            div.searchbar-input
+                input(class="searchbar-input-field" placeholder="Search for a Company like Apple or IBM...")
+    div.navbar__right
+        div(class="navbar__nav")
+            a(class="navbar__nav-portfolio" href="/portfolio") Portfolio
+            div(class="navbar__nav-account") Account
+    //- div(class="navbar__nav-container")
 div(class="navigation__status navbar__account hidden")
     div(class="navbar__account-signout hidden") Sign Out

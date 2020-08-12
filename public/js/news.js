@@ -16,11 +16,13 @@ window.addEventListener("DOMContentLoaded", async (e) => {
     const newsList = document.createElement("div");
     newsList.className = "portfolio__news-article-container";
     newsList.innerHTML = `
-            <a href="${newsLink}">
+            <div class="news__left">
+              <a class="news__title" target="_blank" rel="noopener noreferrer" href="${newsLink}">${newsTitle}</a>
+              <a class="news__summary" target="_blank" rel="noopener noreferrer" href="${newsLink}">${newsSummary}</a>
+            </div>
+            <a target="_blank" rel="noopener noreferrer" href="${newsLink}">
               <img class="news__image" type="image/jpeg" src="/assets/images/${i}.jpg" width="160px" height="160px">
             <a>
-            <a class="news__title" href="${newsLink}"> ${newsTitle}</a>
-            <a class="news__summary" href="${newsLink}"> ${newsSummary}</a>
         `;
     newsContainer.appendChild(newsList);
   }

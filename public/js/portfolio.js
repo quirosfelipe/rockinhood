@@ -69,11 +69,11 @@ let targetStockSymbol;
 function drawChartGreen(data) {
   // set the dimensions and margins of the graph
   var margin = {
-    top: 50,
-    right: 30,
-    bottom: 30,
-    left: 60,
-  },
+      top: 50,
+      right: 30,
+      bottom: 30,
+      left: 60,
+    },
     width = 700 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
 
@@ -200,7 +200,7 @@ function drawChartGreen(data) {
       (Math.round(data[0].value * 100) / 100).toFixed(2); //**** */
     var diffPercentage =
       ((Math.round(data[data.length - 1].value * 100) / 100).toFixed(2) * 100) / //**** */
-      (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
+        (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
       100; //**** */
     d3.select(".portfolio__header").html(`<span> \$${moveVal}</span>`);
     d3.select(".portfolio__header-change").html(
@@ -214,11 +214,11 @@ function drawChartGreen(data) {
 function drawChartRed(data) {
   // set the dimensions and margins of the graph
   var margin = {
-    top: 50,
-    right: 30,
-    bottom: 30,
-    left: 60,
-  },
+      top: 50,
+      right: 30,
+      bottom: 30,
+      left: 60,
+    },
     width = 700 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
 
@@ -345,7 +345,7 @@ function drawChartRed(data) {
       (Math.round(data[0].value * 100) / 100).toFixed(2); //**** */
     var diffPercentage =
       ((Math.round(data[data.length - 1].value * 100) / 100).toFixed(2) * 100) / //**** */
-      (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
+        (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
       100; //**** */
     d3.select(".portfolio__header").html(`<span> \$${moveVal}</span>`);
     d3.select(".portfolio__header-change").html(
@@ -359,11 +359,11 @@ function drawChartRed(data) {
 function drawChartGreenWatch(data, i, target) {
   // set the dimensions and margins of the graph
   var margin = {
-    top: 10,
-    right: 20,
-    bottom: 10,
-    left: 20,
-  },
+      top: 10,
+      right: 20,
+      bottom: 10,
+      left: 20,
+    },
     width = 100 - margin.left - margin.right,
     height = 40 - margin.top - margin.bottom;
 
@@ -420,11 +420,11 @@ function drawChartGreenWatch(data, i, target) {
 function drawChartRedWatch(data, i, target) {
   // set the dimensions and margins of the graph
   var margin = {
-    top: 10,
-    right: 20,
-    bottom: 10,
-    left: 20,
-  },
+      top: 10,
+      right: 20,
+      bottom: 10,
+      left: 20,
+    },
     width = 100 - margin.left - margin.right,
     height = 40 - margin.top - margin.bottom;
 

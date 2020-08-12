@@ -45,7 +45,9 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   document.querySelector(
     ".company__about-avgvolume-data"
   ).innerHTML = modAverageVolume;
-  document.querySelector(".company__buy-title").innerHTML = `Buy / Sell ${symbol}`;
+  document.querySelector(
+    ".company__buy-title"
+  ).innerHTML = `Buy / Sell ${symbol}`;
   let cashBalance = localStorage.getItem("ROCKINHOOD_CURRENT_CASH_BALANCE");
   let userId = localStorage.getItem("ROCKINHOOD_CURRENT_USER_ID");
 
@@ -57,12 +59,15 @@ window.addEventListener("DOMContentLoaded", async (e) => {
 
   updateBuyingPower(parseInt(cashBalance, 10));
 
-  let numberShares;
+  let numberShares = 0;
   const numShares = document.querySelector(".company__buy-share-input");
   numShares.addEventListener("change", (event) => {
     numberShares = event.target.value;
-    let estCost = numberShares * initVal;
-    document.querySelector(".company__buy-cost").innerHTML = `\$${estCost.toFixed(2)}`;
+    // let estCost = parseInt(numberShares) * parseInt(initVal);
+    let estCost = initVal ? initVal * numberShares : 0;
+    document.querySelector(
+      ".company__buy-cost"
+    ).innerHTML = `\$${estCost.toFixed(2)}`;
   });
 
   var purchaseButton = document.querySelector(".company__buy-order-button");
@@ -77,8 +82,12 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       // localStorage.setItem("ROCKINHOOD_CURRENT_CASH_BALANCE", newBalance);
       updateBuyingPower(newBalance);
 
-      const body = { company: name, shares: numberShares, price: initVal }
-      const res = await fetch(`${backendUrl}/transactions/${userId}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+      const body = { company: name, shares: numberShares, price: initVal };
+      const res = await fetch(`${backendUrl}/transactions/${userId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
       const data = await res.json();
       // debugger;
       // console.log(data);
@@ -99,7 +108,11 @@ window.addEventListener("DOMContentLoaded", async (e) => {
       updateBuyingPower(newBal);
       localStorage.setItem("ROCKINHOOD_CURRENT_CASH_BALANCE", newBal);
       const body = { price: initVal };
-      await fetch(`${backendUrl}/transactions/${symbol}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+      await fetch(`${backendUrl}/transactions/${symbol}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
       window.location.href = "/portfolio";
     }
   });
@@ -136,38 +149,48 @@ window.addEventListener("DOMContentLoaded", async (e) => {
   const watchListData = await watchListRes.json();
 
   let checkIfInWatchlist = false;
-  watchListData.watchlists.forEach(company => {
+  watchListData.watchlists.forEach((company) => {
     if (company.Company.symbol === symbol) {
       checkIfInWatchlist = true;
     }
   });
 
   if (checkIfInWatchlist) {
-    document.querySelector(".company__remove-watch").innerHTML = "Remove from Watchlist";
+    document.querySelector(".company__remove-watch").innerHTML =
+      "Remove from Watchlist";
   } else {
-    document.querySelector(".company__remove-watch").innerHTML = "Add to Watchlist";
+    document.querySelector(".company__remove-watch").innerHTML =
+      "Add to Watchlist";
   }
 
   const addRemoveButton = document.querySelector(".company__remove-watch");
   addRemoveButton.addEventListener("click", async (event) => {
     if (addRemoveButton.innerHTML === "Remove from Watchlist") {
-      await fetch(`${backendUrl}/watchlists/${id}`, { method: "DELETE", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ userId }) });
+      await fetch(`${backendUrl}/watchlists/${id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userId }),
+      });
       window.location.href = "/portfolio";
     } else {
-      await fetch(`${backendUrl}/watchlists/${userId}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ symbol }) });
+      await fetch(`${backendUrl}/watchlists/${userId}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ symbol }),
+      });
       window.location.href = "/portfolio";
     }
-  })
+  });
 });
 
 function drawChartGreen(data) {
   // set the dimensions and margins of the graph
   var margin = {
-    top: 50,
-    right: 30,
-    bottom: 30,
-    left: 20,
-  },
+      top: 50,
+      right: 30,
+      bottom: 30,
+      left: 20,
+    },
     width = 700 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
 
@@ -295,7 +318,7 @@ function drawChartGreen(data) {
       (Math.round(data[0].value * 100) / 100).toFixed(2); //**** */
     var diffPercentage =
       ((Math.round(data[data.length - 1].value * 100) / 100).toFixed(2) * 100) / //**** */
-      (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
+        (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
       100; //**** */
     d3.select(".company__price").html(`<span> \$${moveVal}</span>`);
     d3.select(".company__price-change").html(
@@ -308,11 +331,11 @@ function drawChartGreen(data) {
 function drawChartRed(data) {
   // set the dimensions and margins of the graph
   var margin = {
-    top: 50,
-    right: 30,
-    bottom: 30,
-    left: 60,
-  },
+      top: 50,
+      right: 30,
+      bottom: 30,
+      left: 60,
+    },
     width = 700 - margin.left - margin.right,
     height = 300 - margin.top - margin.bottom;
 
@@ -439,7 +462,7 @@ function drawChartRed(data) {
       (Math.round(data[0].value * 100) / 100).toFixed(2); //**** */
     var diffPercentage =
       ((Math.round(data[data.length - 1].value * 100) / 100).toFixed(2) * 100) / //**** */
-      (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
+        (Math.round(data[0].value * 100) / 100).toFixed(2) - //*** */
       100; //**** */
     d3.select(".company__price").html(`<span> \$${moveVal}</span>`);
     d3.select(".company__price-change").html(

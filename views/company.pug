@@ -9,12 +9,12 @@ block content
         div.company__chart-container
             div.company__chart
             div.company__chart-select-container
-                button.company__chart-select 1D
-                button.company__chart-select 1W
-                button.company__chart-select-1 1M
-                button.company__chart-select 3M
-                button.company__chart-select 1Y
-                button.company__chart-select 5Y
+                div.company__chart-select 1D
+                div.company__chart-select 1W
+                div.company__chart-select-1 1M
+                div.company__chart-select 3M
+                div.company__chart-select 1Y
+                div.company__chart-select 5Y
         div.company__about
             div.company__about-title About
             div.company__about-text Description
@@ -41,7 +41,7 @@ block content
         div.company__buy
             div.company__buy-title Buy
             div.company__buy-share Shares
-                input(class="company__buy-share-input" type="number" placeholder="0")
+                input(class="company__buy-share-input" min="0" type="number" placeholder="0")
             div.company__buy-market-price Market Price
                 div.company__buy-price
             div.company__buy-estimated-cost Estimated Cost
@@ -49,9 +49,9 @@ block content
             button.company__buy-order-button Purchase
             button.company__sell-order-button Sell Stock
             div.company__buy-buying-power
+            div.company__remove
+                button.company__remove-watch
             div.historicalc <i class="fa fa-exclamation-circle"></i> These prices are delayed and not to be used for trading purposes.
-        div.company__remove
-            button.company__remove-watch
     script(src="/js/company.js" type="module")
     script(src="/js/sign-out.js" type="module")
     script(src="/js/news_comp.js" type="module")

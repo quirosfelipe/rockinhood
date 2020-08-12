@@ -1,21 +1,41 @@
 doctype html
 html
     head
+        link(rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png")
+        link(rel="manifest" href="favicon_io/site.webmanifest")
+
         title #{title} | Rockinhood
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+
+        //- <!-- Global site tag (gtag.js) - Google Analytics -->
+        //- script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-175194752-3')
+        //- script.
+        //-     window.dataLayer = window.dataLayer || [];
+        //-     function gtag(){dataLayer.push(arguments);}
+        //-     gtag('js', new Date());
+        //-     gtag('config', 'UA-175194752-3');
+        
+   
+
+
         link(rel="stylesheet" type="text/css" href="/css/normalize.css")
         link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
         link(rel="stylesheet" type="text/css" href="/css/main.css")
         script(backend=backend)
         script(src="https://d3js.org/d3.v5.min.js")
-
+        
+       
+       
+       
         <meta name="description" content="Rockinhood App" />
         <meta property="og:type" content="Website" />
         <meta name="image" property="og:image" content="https://i.postimg.cc/0QNd5209/rockinhood.png" />
         <meta name="image" property="og:image" content="https://i.postimg.cc/90Wp3QRP/rockinhood2.png" />
         <meta name="description" property="og:description" content="Rockinhood App" />
-        
+
     body
         block content

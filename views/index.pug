@@ -19,8 +19,8 @@ block content
             a(class="section1__signup" href="/signup") Sign Up
         div.section1__image-container
             video(class="section1__video" autoplay controlslist="nodownload nofullscreen noremoteplayback" loop muted playsinline preload="auto")
-                source(src="https://cdn.robinhood.com/assets/robinhood/brand/8a5e77cafdc8af11be3651d08c2ff2a2-3x.mp4" type="video/mp4")
-            img(class="section1__image" src="https://cdn.robinhood.com/assets/robinhood/brand/350f48095cefa5b4a8139e5797e5232d-1x.png")
+                source(src="/assets/gif/rockinhoodmain.mp4" type="video/mp4")
+            img(class="section1__image" src="/assets/images/rockinhoodmain.png")
             //- ToDo place image
 
     div(class="section2")
@@ -47,48 +47,69 @@ block content
                 //-ToDo think about what we will do with the form
             //- div.section3__disclosure <i class="fa fa-exclamation-circle"></i> Fractional Shares Disclosure
         div.section3__image-container
-            img(src="https://cdn.robinhood.com/assets/robinhood/brand/1006e4b792847a66da3836fe234d3ec2-1x.png")
+            img(src="/assets/images/rockinhoodmain2.png")
 
     div(class="section4")
         nav.section4__nav
-            button(type="button" class="section4__nav--up")
-                <i class="fa fa-arrow-up"></i>
+            //- button(type="button" class="section4__nav--up")
+            //-     <i class="fa fa-arrow-up"></i>
             ul.section4__nav-text
                 li.section4__nav-element
-                    button.section4__nav--button Learn
+                    button(class="section4__nav--button section4__nav--button1 section4__activebtn") Learn
                 li.section4__nav-element
-                    button.section4__nav--button Manage
+                    button(class="section4__nav--button section4__nav--button2") Manage
                 li.section4__nav-element
-                    button.section4__nav--button Customize
-            button(type="button" class="section4__nav--down")
-                <i class="fa fa-arrow-down"></i>
-        div.section4__image
-            img(src="https://cdn.robinhood.com/assets/robinhood/brand/082fbd2b61170c3860fbc4d1913d74cf-1x.png")
-        div.section4__text-container
-            div.section4__text-container--title Learn As You Grow
-            div.section4__text-container--text Our goal is to make investing in financial markets more affordable, more intuitive, and more fun, no matter how much experience you have (or don’t have).
+                    button(class="section4__nav--button section4__nav--button3") Customize
+            //- button(type="button" class="section4__nav--down")
+            //-     <i class="fa fa-arrow-down"></i>
+
+        div(class="section4__visible section4__learn")
+            div.section4__image
+                img(class="main__learn" src="/assets/images/rockinhoodmainlearn.png")
+            div.section4__text-container
+                div.section4__text-container--title Learn As You Grow
+                div.section4__text-container--text Our goal is to make investing in financial markets more affordable, more intuitive, and more fun, no matter how much experience you have (or don’t have).
+        
+        div(class="section4__invisible section4__manage")
+            div.section4__image
+                img(class="main__manage" src="/assets/images/rockinhoodmainmanage.png")
+            div.section4__text-container
+                div.section4__text-container--title Manage Your Portfolio
+                div.section4__text-container--text Keep your portfolio in your pocket. Everything you need to manage your assets is available in a single app.
+        
+        div(class="section4__invisible section4__customize")
+            div.section4__image
+                img(class="main__customize" src="/assets/images/rockinhoodmaincustomize.png")
+            div.section4__text-container
+                div.section4__text-container--title Keep Tabs on Your Money
+                div.section4__text-container--text Set up customized news and notifications to stay on top of your assets as casually or as relentlessly as you like. Controlling the flow of info is up to you.
 
     div(class="section5")
         div.section5__left
             div.section5__title Our Products
             div.section5__nav
-                div.section5__nav--cash-management Cash Management
-                div.section5__nav--stock-fund Stocks & Funds
-                div.section5__nav--options Options
-                div.section5__nav--gold Gold
-                div.section5__nav--crypto Crypto
+                btn(class="section5__activebtn section5__nav--cash-management") Cash Management
+                btn.section5__nav--stock-fund Stocks & Funds
+                btn.section5__nav--options Options
+                btn.section5__nav--gold Gold
+                btn.section5__nav--crypto Crypto
             div.section5__nav-text-container
-                div.section5__nav--cm-text Earn 0.30% APY* on your uninvested cash and get more flexibility with your brokerage account.
-                div.section5__nav--sf-text Get mobile access to the markets. Invest commission-free in individual companies or bundles of investments (ETFs).
-                div.section5__nav--o-text Be bullish on stocks you believe in and bearish on the ones you don’t. It’s your call.
-                div.section5__nav--g-text Access research reports, trade on margin, and make bigger deposits with quicker access to funds—all starting at $5 per month.
-                div.section5__nav--c-text Tap into the cryptocurrency market to buy, HODL, and sell Bitcoin, Ethereum, Dogecoin, and more, 24/7 with Rockinhood Crypto.
+                div(class="section5__nav--cm-text section5__visible") Earn 0.30% APY* on your uninvested cash and get more flexibility with your brokerage account.
+                div(class="section5__nav--sf-text section5__invisible") Get mobile access to the markets. Invest commission-free in individual companies or bundles of investments (ETFs).
+                div(class="section5__nav--o-text section5__invisible") Be bullish on stocks you believe in and bearish on the ones you don’t. It’s your call.
+                div(class="section5__nav--g-text section5__invisible") Access research reports, trade on margin, and make bigger deposits with quicker access to funds—all starting at $5 per month.
+                div(class="section5__nav--c-text section5__invisible") Tap into the cryptocurrency market to buy, HODL, and sell Bitcoin, Ethereum, Dogecoin, and more, 24/7 with Rockinhood Crypto.
                 div.section5__nav--button-container
                     button(class="section5__nav--button") Sign In as Demo User
                 //-ToDo implement different disclosures
                 //- div.section5__nav--disclosure <i class="fa fa-exclamation-circle"></i> Variable APY and Debit Card Disclosure
         div.section5__image
-            img(class="section5__image-ele" src="https://cdn.robinhood.com/assets/robinhood/brand/e46bb5ae43b4085ee9a2e2d576047a37-1x.png")
+            img(class="section5__image-ele section5__img1 section5__visible" src="/assets/images/rockinhoodmain3.png")
+            img(class="section5__image-ele section5__img2 section5__invisible" src="/assets/images/rockinhoodmain4.png")
+            img(class="section5__image-ele section5__img3 section5__invisible" src="/assets/images/rockinhoodmain5.png")
+            img(class="section5__image-ele section5__img4 section5__invisible" src="/assets/images/rockinhoodmain6.png")
+            img(class="section5__image-ele section5__img5 section5__invisible" src="/assets/images/rockinhoodmain7.png")
+
             div.section5__nav--small-text Cash Management offered through Rockinhood Financial
 
     div(class="footer")
@@ -104,7 +125,7 @@ block content
                     a(class="section6__createdby-git" href="https://github.com/quirosfelipe" target="_blank" rel="noopener noreferrer") <i class="fa fa-github" aria-hidden="true"></i>
                     a(class="section6__createdby-linkedin" href="https://www.linkedin.com/in/quirosfelipe/" target="_blank" rel="noopener noreferrer") <i class="fa fa-linkedin-square" aria-hidden="true"></i>
             div.section7__text-container
-                div.section7__text1 © 2020 Rockinhood. All rights reserved.
+                div.section7__text1 © 2021 Rockinhood. All rights reserved.
         //- div.split-container
         //-     div.split
         //- div(class="section7")
@@ -114,4 +135,5 @@ block content
             //- div.section7__disclosure <i class="fa fa-exclama    tion-circle"></i> View Important Disclosures
 
         script(src="/js/index_login.js" type="module")
+        script(src="/js/mainpage.js" type="module")
 
